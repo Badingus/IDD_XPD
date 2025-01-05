@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koenigsegg Gemera</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    
+  <nav class="custom-navbar">
+    <div class="navbar-container">
+      <a href="#" class="navbar-brand">
+        <img src="./img/Logo.png" alt="Logo" class="logo">
+      </a>
+      <button class="navbar-toggler" onclick="toggleNavbar()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-menu" id="navbarMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="preorder.html">Pre-Order</a></li>
+          <li class="nav-item"><a class="nav-link" href="testdrive.html">Book A Test Drive</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+      
+      <main>
+        <!-- Banner Header 1 (First Top)-->
+
+        <section class="configurator"></section>
+
+        <!-- Backstory -->
+
+        <section class="preorderconfigurator">
+              <div class="flex-grow-1 ms-4 px-5">
+                <h1 class="mb-3 ">Preorder</h1>
+                <p class="mb-0">The Koenigsegg Gemera is a limited production four-seat plug-in hybrid grand tourer (or 2-door sports saloon) to be manufactured by the Swedish automobile manufacturer Koenigsegg. It was unveiled on 3 March 2020 at an online broadcast by Koenigsegg at the cancelled Geneva Motor Show.</p>
+              </div>
+            </div>
+          </section>
+
+        <!-- Form - Pre-Order -->
+        
+        <section class="preorderform">
+          <form>
+            <div class="form-row">
+              <div class="form-group-half">
+                <label for="inputFirstName">First Name</label>
+                <input type="text" id="inputFirstName" placeholder="Input First Name">
+              </div>
+              <div class="form-group-half">
+                <label for="inputLastName">Last Name</label>
+                <input type="text" id="inputLastName" placeholder="Input Last Name">
+              </div>
+              <div class="form-group">
+                <label for="inputEmail">Email Address</label>
+                <input type="email" id="inputEmail" placeholder="Email Address">
+              </div>
+              <div class="form-group">
+                <label for="inputPhoneNumber">Phone Number</label>
+                <input type="tel" id="inputPhoneNumber" placeholder="Input Phone Number">
+              </div>
+              
+              <div class="form-group">
+                <label for="inputAddress">Billing Address</label>
+                <input type="text" id="inputAddress" placeholder="Billing Address goes here...">
+              </div>
+              <div class="form-group-half">
+                <label for="inputDelivery">Preferred Delivery</label>
+                <select id="inputDelivery">
+                  <option selected>Select Preferences</option>
+                  <option>Home Delivery</option>
+                  <option>Dealer Pickup (Additional Charges Apply)</option>
+                </select>
+              </div>
+              <div class="form-group-half">
+                <label for="inputPayment">Select Payment</label>
+                <select id="inputPayment">
+                  <option selected>Choose Payment Type</option>
+                  <option>Credit/Debit Card</option>
+                  <option>Bank Transfer</option>
+                  <option>Cryptocurrency (if applicable)</option>
+                </select>
+              </div>
+              <div class="form-group-half">
+                <label for="inputDeposit">Select Deposit Amount</label>
+                <select id="inputDeposit">
+                  <option selected>Select Deposit Amount</option>
+                  <option>10% Deposit</option>
+                  <option>25% Deposit</option>
+                  <option>50% Deposit</option>
+                </select>
+              </div>
+              <div class="form-group-half">
+                <label for="inputDate">Preferred Date</label>
+                <input type="date" id="inputDate">
+              </div>
+              <div class="form-group">
+                <label for="inputFeatures">Optional Features & Packages</label>
+                <select id="inputFeatures">
+                  <option selected>Select Optional Features & Packages</option>
+                  <option>None</option>
+                  <option>Custom Interior Design</option>
+                  <option>Performance Upgrades</option>
+                  <option>Exclusive Design Packages</option>
+                  <option>Others (Specify in the Custom Request below)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="commentBox">Custom Request/Comments</label>
+                <textarea id="commentBox" rows="5" placeholder="Write your comments here..."></textarea>
+              </div>
+              
+              
+
+              <fieldset class="form-group">
+                <legend>How did you know about us?</legend>
+                <div class="form-radio-group">
+                  <label><input type="radio" name="source" value="family"> Family & Friends</label>
+                  <label><input type="radio" name="source" value="website"> Website</label>
+                  <label><input type="radio" name="source" value="events"> Official Events</label>
+                  <label><input type="radio" name="source" value="others"> Others</label>
+                </div>
+              </fieldset>
+
+
+              <div class="form-checkbox">
+                <input type="checkbox" id="gridCheck">
+                <label for="gridCheck">
+                  By submitting this form, you agree to the following:
+              </div>
+            </div>
+            
+
+              <div class="form-checkbox-info">
+                  1. This pre-order reserves your place in line for the Koenigsegg Gemera.
+                  <br>
+                  2. The deposit is non-refundable unless otherwise specified.<br>
+                  3. Final pricing, taxes, and delivery charges will be confirmed before order finalization.<br>
+                  <br>
+                  ** For Custom Request, a salesperson will contact you via phone or email.
+              </div>
+                </label>
+            </div>
+
+            <div class="text-center">
+              <button type="submit">Submit the Pre-order</button>
+            </div>
+          </form>
+        </section>
+        
+        </main>
+        
+        <footer class="custom-footer">
+          <div class="footer-container">
+              <div class="footer-logo-section">
+                  <a href="#" class="footer-logo-link">
+                      <img src="./img/Koenigsegg_Logo_Black.png" alt="Logo" class="footer-logo">
+                  </a>
+                  <p class="footer-copyright">© 2024</p>
+              </div>
+              <div class="footer-navigation">
+                  <h5 class="footer-title">Navigation</h5>
+                  <ul class="footer-nav">
+                      <li class="footer-item"><a href="#" class="footer-link">Home</a></li>
+                      <li class="footer-item"><a href="#" class="footer-link">Features</a></li>
+                      <li class="footer-item"><a href="#" class="footer-link">Pricing</a></li>
+                      <li class="footer-item"><a href="#" class="footer-link">FAQs</a></li>
+                      <li class="footer-item"><a href="#" class="footer-link">About</a></li>
+                  </ul>
+              </div>
+          </div>
+      </footer>
+      
+    
+    </body>
+    </html>

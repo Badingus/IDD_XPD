@@ -1,4 +1,7 @@
-
+* {
+  margin: 0;
+  padding: 0;
+  }
 
 /* Font Part */
 
@@ -10,8 +13,10 @@
 
 .nav-link {
     font-family: 'Questrial', sans-serif; /* Different font for links */
-    font-size: 16px;
+    font-size: 24px;
+    color: whitesmoke;
   }
+
 
   @font-face {
     font-family: Norwester;
@@ -20,12 +25,131 @@
 
 /* Navigation Bar */
 
-.menu {
+/* .menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: none;
+} */
+
+/* General Navbar Styles */
+
+.custom-navbar {
+  background-color: rgba(103,123,122, 0.5);
+  
+  padding: 10px 20px;
 }
+
+.navbar-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  max-width: 1780px;
+  margin: 0 auto;
+  width: 100%;
+
+  
+}
+
+.navbar-brand .logo {
+  width: 200px;
+  height: auto;
+}
+
+.navbar-toggler {
+  display: none; /* Hidden on larger screens */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.navbar-toggler-icon::before {
+  top: -6px;
+}
+
+.navbar-toggler-icon::after {
+  top: 6px;
+}
+
+/* Navbar Menu */
+
+.navbar-menu {
+  display: flex; /* Make the navbar items display horizontally */
+  justify-content: flex-end;
+  width: 90%;
+}
+
+/* .navbar-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar-menu li {
+  float: left;
+}
+
+.navbar-menu li a {
+
+  display: block; 
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  width: 100%;
+
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
+
+*/
+
+.navbar-nav {
+  display: flex; /* Make the list items display in a row */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 30px; /* Space between links */
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding-left: 25px;
+}
+
+.nav-link:hover {
+  color: #f39c12; /* Hover color */
+}
+
+
 
 /* Banner Background */
 
@@ -156,8 +280,324 @@
 
   }
 
+  /*Slider Comparison Spot*/
+
+  .Comparison {
+    background-image: url(../img/Gemera_Compare.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 720px; /* Adjust height as needed */
+    width: 1920px; /* Makes the section full width */
+  }
+
   .btn {
 
     font-size: 42px;
     font-family: Norwester;
   }
+
+  /* Pre-Order Page */
+
+.configurator {
+
+  background-image: url(../img/gemeraconfigurator.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 720px; /* Adjust height as needed */
+    width: 1920px; /* Makes the section full width */
+    
+}
+
+.preorderconfigurator {
+  padding: 100px 0; 
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.preorderconfigurator h1 {
+  font-size: 64px; 
+  line-height: 1.2;  
+  font-family: Norwester;
+  text-align: center;
+}
+
+.preorderconfigurator p {
+  font-size: 24px;   
+  line-height: 1.5;  
+  text-align: center;
+}
+
+/* 
+.preorderform {
+
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+.preorderform .form-control {
+  height: 50px; 
+  font-size: 16px; 
+  padding: 10px; 
+}
+
+.preorderform select.form-select {
+  height: 50px; 
+  font-size: 16px; 
+}
+
+.preorderform .btn-primary {
+  margin-top: 50px; 
+}
+
+.preorderform fieldset {
+
+  margin-top: 40px;
+
+}
+
+textarea {
+  resize: none; 
+  width: 100%; 
+  height: 150px; 
+  overflow: auto; 
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  font-style: normal;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+}
+
+#commentBox {
+  width: 100%; 
+  height: 150px; 
+  resize: none; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  font-family: Arial, sans-serif; 
+}
+
+*/
+
+body {
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  margin: 0;
+  
+}
+.preorderform {
+  max-width: 1920px;
+ 
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+.form-group {
+  padding: 10px;
+  width: 100%;
+}
+.form-group-half {
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select, textarea, button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Form Checkbox & Radios */
+
+.form-checkbox {
+  display: flex;
+  align-items: normal;
+  margin-left: 10px;
+  margin-top: 25px;
+}
+.form-checkbox label {
+  display: inline-block;
+  margin-left: 10px; /* Optional spacing between checkbox and label */
+  line-height: 1.8; /* Adjust line spacing for better readability */
+  padding: 10px; /* Optional padding for internal spacing */
+  white-space: nowrap;
+  width: calc(100% - 20px);
+  text-overflow: ellipsis;
+}
+
+.form-checkbox-info {
+
+  margin-left: 50px;
+  margin-top: px;
+}
+
+.form-checkbox input[type="checkbox"] {
+  
+  align-items: center;
+
+}
+
+/* Radio - Pre-Order */
+
+fieldset {
+  border: 0;
+}
+
+.form-radio-group {
+  display: flex; /* Align items horizontally */
+  gap: 5px; /* Add spacing between radio buttons */
+  justify-content: space-between; 
+  margin-right: 800px;
+  text-align: left;
+
+}
+
+.form-radio-group label {
+  display: inline-block;
+  padding-top: 25px;
+  white-space: nowrap;
+  width: auto;
+  
+}
+
+.form-radio-group input {
+  margin-right: 10px;
+  width: auto;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.text-center {
+
+  text-align: center;
+  padding-top: 50px;
+  
+}
+
+.text-center button {
+  font-size: 36px;
+  font-family: Norwester;
+}
+
+
+/* Footer */
+
+/* Footer Styles */
+.custom-footer {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 50px 20px;
+  border-top: 1px solid #ddd; /* Top border */
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+
+.footer-logo-section {
+  flex: 1; /* Take up equal space */
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-logo {
+  width: 200px;
+  height: auto;
+}
+
+.footer-copyright {
+  color: #6c757d; /* Muted text color */
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Navigation Section */
+
+.footer-navigation {
+  flex: 1; /* Take up equal space */
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-item {
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #6c757d; /* Muted text color */
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #007bff; /* Blue color on hover */
+}
