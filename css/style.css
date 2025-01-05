@@ -1,0 +1,163 @@
+
+
+/* Font Part */
+
+.questrial-regular {
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.nav-link {
+    font-family: 'Questrial', sans-serif; /* Different font for links */
+    font-size: 16px;
+  }
+
+  @font-face {
+    font-family: Norwester;
+    src: url(../font-face/norwester.otf);
+}
+
+/* Navigation Bar */
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+/* Banner Background */
+
+.banner-section {
+
+    background-image: url(../img/Gemera.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 720px; /* Adjust height as needed */
+    width: 1920px; /* Makes the section full width */
+    
+}
+
+/* Backstory */
+
+/* .Backstory {
+
+    padding-top: 100px;
+
+    padding-left: 50px;
+    padding-right: 50px;
+
+    padding-bottom: 100px;
+}
+
+.backstory-image {
+    
+}
+
+*/
+
+.Backstory {
+    padding: 100px 0; /* Optional: Adds vertical spacing to the section */
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .backstory-image {
+    width: 420px;
+    height: 420px;
+  }
+  
+  .Backstory h1 {
+    font-size: 64px; /* Adjusts header font size */
+    line-height: 1.2;  /* Adjusts line height for better alignment */
+    font-family: Norwester;
+  }
+  
+  .Backstory p {
+    font-size: 24px;   /* Adjusts paragraph font size */
+    line-height: 1.5;  /* Adjusts paragraph line height */
+  }
+
+  .backstory-text {
+
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+
+  /* Hotspot */
+
+  .Hotspot{
+
+    background-image: url(../img/PlaceholderHotspot.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 720px; /* Adjust height as needed */
+    width: 1920px; /* Makes the section full width */
+    
+}
+
+  /* Engine-Audio */
+
+  .Engine-Audio {
+    padding: 100px 0; /* Optional: Adds vertical spacing to the section */
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .Engine-Audio h1 {
+    font-size: 64px; /* Adjusts header font size */
+    line-height: 1.2;  /* Adjusts line height for better alignment */
+    font-family: Norwester;
+    text-align: right;
+  }
+
+  .Engine-Audio p {
+    font-size: 24px;   /* Adjusts paragraph font size */
+    line-height: 1.5;  /* Adjusts paragraph line height */
+    text-align: right;
+  }
+
+  /* Pre-Order */
+
+  .Pre-Order {
+
+    padding: 200px 0;
+    text-align: center;
+
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+
+    background-color: black;
+    
+  }
+
+  .Pre-Order h1 {
+    font-size: 64px; /* Adjusts header font size */
+    line-height: 1.2;  /* Adjusts line height for better alignment */
+    font-family: Norwester;
+    padding-bottom: 25px;
+
+  }
+
+  .Pre-Order p {
+    font-size: 24px;   /* Adjusts paragraph font size */
+    line-height: 1.5;  /* Adjusts paragraph line height */
+    padding-bottom: 100px;
+
+  }
+
+  .btn {
+
+    font-size: 42px;
+    font-family: Norwester;
+  }
