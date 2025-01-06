@@ -1,0 +1,140 @@
+  #web-canvas {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  #web-canvas-container {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 5;
+  }
+  
+  #ui {
+    top: 0;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .gradient {
+    background: linear-gradient(to bottom, #323232, #000000); /* Gradient from top to bottom */
+      background-size: 100% calc(100% + 1px);
+      /* margin: -0.25% 0; */
+  }
+  
+  .customizer-container {
+    top: 0%;
+    position:relative;
+    background-color: rgb(255, 72, 0); 
+    z-index: 100;
+    width: 100%;
+    height: 100%; /* Full viewport height */
+    overflow: hidden;
+  }
+
+  #overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Place the overlay above the canvas */
+    color: white; /* Ensure the text is visible */
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+    border-radius: 10px; /* Optional: rounded corners */
+  }
+  
+  .strap-colors {
+    list-style: none;
+  }
+  
+  
+  .config:hover {
+    filter: drop-shadow(0 0 0.75rem rgba(28, 17, 52, 0.7));
+    transition: 0.8s ease;
+    transform:scale(1.5);
+  }
+  
+  .config {
+    background-color: #ff8400; /* Green */
+    border: 2px solid;
+    color: white;
+    padding: 20px 20px;
+    text-align: center;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 100px;
+  }
+
+  .color1 {
+    background-color: rgb(150, 150, 150)
+  }
+  .color2 {
+    background-color: rgb(54, 54, 54)
+  }
+  .color3 {
+    background-color: rgb(182, 58, 58)
+  }
+  .color4 {
+    background-color: rgb(113, 157, 138)
+  }
+  .color5 {
+    background-color: rgb(52, 52, 74)
+  }
+
+  .banner
+  {
+    height: 720px; /* Adjust height as needed */
+    width: 1920px; /* Makes the section full width */
+  }
+  #backgroundVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Place video behind content */
+    opacity: 0.6; /* Optional: make it semi-transparent */
+  }
+#banner{
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    z-index: -5;
+}
+
+.content {
+
+    z-index: 10; /* Place content above video */
+    color: rgb(0, 0, 0); /* Ensure text contrasts with the video */
+    text-align: center;
+    padding: 20px;
+    font-family: Arial, sans-serif; /* Ensure readable font */
+    background: rgba(0, 0, 0, 0.5); /* Optional: add a semi-transparent background to content */
+    border-radius: 10px; /* Optional: rounded corners for content box */
+    max-width: 600px; /* Optional: limit width of the content */
+    margin: 50px auto; /* Center content horizontally and add spacing from top */
+  }
+
+
+  .center {
+    margin: auto;
+    display: block;
+    width: 80%;
+    height:100%;
+    border-radius:3px;
+    border-color: none;
+  }
+
+  
+  
+  

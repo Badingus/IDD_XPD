@@ -11,11 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style_AG.css">
+
+    <script src="./scripts/main.js" type="module"></script>
 </head>
 
 <body>
     
-    <nav class="navbar navbar-expand-lg custom-navbar px-4 ">
+    <nav class="navbar navbar-expand-lg custom-navbar px-4 hidden " id="navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="#"><img src="./img/Logo.png" alt="Logo" width="200" height="auto" class="d-inline-block align-text-top">
           </a>
@@ -54,9 +57,15 @@
 
         <section class="banner-section"> 
 
-          <div class = "banner">
-            <img class = "gemera-Logo" src="./Gemera_logo.png">
-            <h1>2-seater performance, 4-seater design.</h1>
+          <div class = "banner" id ="banner">
+              <video autoplay loop muted playsinline id="background-video">
+                <source src="./videos/gemeraVid.mp4" type="video/mp4">
+              </video>
+              <div id="content">
+              <img class = "gemera-Logo" src="./img/Logo.png">
+              <h1>2-seater performance, 4-seater design.</h1>
+              </div>
+            
           </div>
 
         </section>
@@ -87,10 +96,12 @@
           href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
         />
         
-        <img-comparison-slider>
-          <img slot="first" src="img/before.jpg" />
-          <img slot="second" src="img/after.jpg" />
-        </img-comparison-slider>  
+        <div class = "slider-comparison">
+          <img-comparison-slider class ="center">
+            <img slot="first" src="img/before.png" />
+            <img slot="second" src="img/after.png" />
+          </img-comparison-slider>  
+        </div>
         </section>
 
         <!-- Hotspot -->
@@ -113,14 +124,51 @@
             </div>
           </section>
 
+          <div id="web-canvas-container">
+            <div class="customizer-container offset">
+            <canvas id="web-canvas" class="gradient"></canvas>
+      
+            
+              <h3>Sink</h3>
+              <div class="button-horizontal-group" id = "overlay">
+                <button class="config carBody color1"></button>
+                <button class="config carBody color2"></button>
+                <button class="config carBody color3"></button>
+                <button class="config carBody color4"></button>
+                <button class="config carBody color5"></button>
+              </div>
+      
+              <h3>wheelAccent</h3>
+              <div class="button-horizontal-group" id = "overlay">
+                <button class="config wheelAccent color1"></button>
+                <button class="config wheelAccent color2"></button>
+                <button class="config wheelAccent color3"></button>
+                <button class="config wheelAccent color4"></button>
+                <button class="config wheelAccent color5"></button>
+              </div>
+
+              <div class="button-horizontal-group" id = "overlay">
+              <h3>Drawer</h3>
+              
+                <button class="config wheel color1"></button>
+                <button class="config wheel color2"></button>
+                <button class="config wheel color3"></button>
+                <button class="config wheel color4"></button>
+                <button class="config wheel color5"></button>
+              </div>
+            </div>
+          </div>
+      
+          
+
         
 
         <!-- Call-to-Action -->
 
         <section class="Pre-Order">
 
-            <h1> Get your own headstart for your family trip!</h1>
-            <p> By pre-ordering, you get exclusive merches and accessories that is limited to pre-ordered purchases of our product! What are the exclusives? A secret!</p>
+            <h1>Experience the pinnacle of luxury and performance.</h1>
+            <p> Secure your Koenigsegg Gemera today—pre-order now and redefine your journey.</p>
             
             <button type="button" class="btn btn-outline-light col-3 mx-auto"> Pre-Order Now! </button>
 

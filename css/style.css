@@ -34,10 +34,21 @@
 
 /* General Navbar Styles */
 
-.custom-navbar {
-  background-color: rgba(103,123,122, 0.5);
-  
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(103,123,122,1);
+  color: white;
   padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
 }
 
 .navbar-container {
@@ -47,8 +58,6 @@
   max-width: 1780px;
   margin: 0 auto;
   width: 100%;
-
-  
 }
 
 .navbar-brand .logo {
@@ -155,10 +164,10 @@
 
 .banner-section {
 
-    background-image: url(../img/Gemera.jpg);
+    /*background-image: url(../img/Gemera.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
 
     height: 720px; /* Adjust height as needed */
     width: 1920px; /* Makes the section full width */
@@ -423,7 +432,7 @@ label {
   font-weight: bold;
 }
 
-input, select, textarea, button {
+input, select, textarea{
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -436,13 +445,26 @@ input, select, textarea, button {
 textarea {
   resize: none;
 }
-button {
+/*Pre-Order form button*/
+.form-button
+{ 
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.form-button {
   background-color: #007bff;
   color: #fff;
   border: none;
   cursor: pointer;
 }
-button:hover {
+.form-button:hover {
   background-color: #0056b3;
 }
 
