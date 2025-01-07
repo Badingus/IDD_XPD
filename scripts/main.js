@@ -1,6 +1,6 @@
-import { gsap } from "gsap";
-import { _numWithUnitExp } from "gsap/gsap-core";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "/node_modules/gsap";
+import { _numWithUnitExp } from "/node_modules/gsap/gsap-core";
+import { ScrollTrigger } from "/node_modules/gsap/ScrollTrigger";
 
 import {
   ViewerApp,
