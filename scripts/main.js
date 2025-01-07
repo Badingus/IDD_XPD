@@ -1,6 +1,6 @@
-import { gsap } from "/node_modules/gsap";
-import { _numWithUnitExp } from "/node_modules/gsap/gsap-core";
-import { ScrollTrigger } from "/node_modules/gsap/ScrollTrigger";
+import { gsap } from "gsap";
+import { _numWithUnitExp } from "gsap/gsap-core";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {
   ViewerApp,
@@ -17,7 +17,7 @@ import {
   Color,
 	Texture,
   Vector3,
-} from '/node_modules/webgi';
+} from 'webgi';
 
 async function setupViewer() {
   const viewer = new ViewerApp({
