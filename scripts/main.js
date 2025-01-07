@@ -17,7 +17,7 @@ import {
   Color,
 	Texture,
   Vector3,
-} from 'webgi';
+} from '/node_modules/webgi';
 
 async function setupViewer() {
   const viewer = new ViewerApp({
