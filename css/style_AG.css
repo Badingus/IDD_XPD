@@ -35,11 +35,15 @@
     overflow: hidden;
   }
 
-  #overlay {
+  .button-group.overlay.hidden
+  {
+    display: none;
+  }
+
+  .button-group.overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 10%;
+    display: grid;
     z-index: 1; /* Place the overlay above the canvas */
     color: white; /* Ensure the text is visible */
     text-align: center;

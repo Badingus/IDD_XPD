@@ -75,6 +75,12 @@ async function setupViewer() {
   var green = new Color(0x5e6b44); //Bonza Green
   var greenAccent = new Color(0x484d40); 
 
+  //Color settings store
+  var bodyColor
+  var carAccentColor
+  var wheelAccentColor
+  var seatCushionColor
+
 
   // Sink
   document.querySelector('.config.carBody.color1')?.addEventListener('click', () => {
@@ -100,6 +106,13 @@ async function setupViewer() {
   function changeBodyColor(colorToBeChanged,accentColor) {
     carBody.color = colorToBeChanged;
     carAccent.color = accentColor;
+
+    //Save color settings
+    bodyColor = colorToBeChanged;
+    carAccentColor = colorToBeChanged;
+
+    console.log(bodyColor);
+
     viewer.scene.setDirty();
   }
 
@@ -118,10 +131,12 @@ async function setupViewer() {
 
   function changeWheelColor(colorToBeChanged) {
     wheelAccent.color = colorToBeChanged;
+
+    //Save color settings
+    wheelAccentColor = colorToBeChanged;
     viewer.scene.setDirty();
   }
 
-  // Drawer
   document.querySelector('.config.drawer-color1')?.addEventListener('click', () => {
     changeDrawerColor(new Color(0x000000));
   })
@@ -132,6 +147,9 @@ async function setupViewer() {
 
   function changeDrawerColor(colorToBeChanged) {
     drawer.color = colorToBeChanged;
+
+    //Save color settings
+    seatCushionColor = colorToBeChanged;
     viewer.scene.setDirty();
   }
 }
