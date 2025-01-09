@@ -82,7 +82,7 @@ async function setupViewer() {
   var seatCushionColor
 
 
-  // Sink
+
   document.querySelector('.config.carBody.color1')?.addEventListener('click', () => {
     changeBodyColor(grey,greyAccent);
   })
@@ -111,7 +111,9 @@ async function setupViewer() {
     bodyColor = colorToBeChanged;
     carAccentColor = colorToBeChanged;
 
-    console.log(bodyColor);
+    configged = true;
+
+    console.log(configged);
 
     viewer.scene.setDirty();
   }
@@ -169,6 +171,12 @@ function playSound() {
   audio.play();
 }
 
+function myFunction()
+{
+  console.log("Page loaded!");
+}
+myFunction()
+
 ScrollTrigger.create({
   trigger: ".Engine-Audio",
   start: "top top",
@@ -209,4 +217,6 @@ window.addEventListener('scroll', () => {
 
   lastScrollPosition = currentScrollPosition;
 });
+
+
 
