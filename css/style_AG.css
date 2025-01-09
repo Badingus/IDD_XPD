@@ -139,6 +139,86 @@
     border-color: none;
   }
 
+
+/*Hotspot selector*/
+
+.canvas-container {
+  background-color: rgba(255, 88, 88, 1);
+  position: relative;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+  width: 100vw;
+  height: 100vh;
+  border-radius: 30px;
+
+}
+
+.webgl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+.hotspot {
+  background-color: rgba(255, 255, 255, 0.678);
+	position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+	z-index: 10;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.hotspot:hover {
+	border-color: rgb(255, 255, 255);
+	background: rgba(100%, 100%, 100%, 50%);
+	color: white;
+	cursor: pointer;
+}
+
+.tooltiptext {
+ visibility: visible;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+
+  position: absolute;
+  z-index: 1;
+  top: 20px;
+  left: 20px;
+  
+  /* Takes 1 second to go from 0% to 100% opacity */
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
   
   
   
