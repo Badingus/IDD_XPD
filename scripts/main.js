@@ -172,6 +172,13 @@ const tick = () => {
 }
 
 tick();
+document.querySelector('.hotspot')?.addEventListener('click', () => {
+	promptTrigger("Top")
+})
+
+function promptTrigger(value) {
+	alert(value + " button clicked");
+}
 
 async function setupViewer() {
   const viewer = new ViewerApp({

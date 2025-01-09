@@ -224,17 +224,17 @@
 
   /* Hotspot */
 
-  .Hotspot{
+  /* .Hotspot{
 
     background-image: url(../img/PlaceholderHotspot.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
-    height: 720px; /* Adjust height as needed */
-    width: 1920px; /* Makes the section full width */
+    height: 720px; 
+    width: 1920px; 
     
-}
+} */
 
   /* Engine-Audio */
 
