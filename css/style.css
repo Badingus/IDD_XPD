@@ -170,7 +170,7 @@
     background-size: cover;
     background-position: center;*/
 
-    height: 720px; /* Adjust height as needed */
+    height: 1080px; /* Adjust height as needed */
     width: 1920px; /* Makes the section full width */
     
 }
@@ -293,14 +293,17 @@
   /*Slider Comparison Spot*/
 
   .Comparison {
-    background-image: url(../img/Gemera_Compare.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-
-    height: 720px; /* Adjust height as needed */
+    height: 820px; /* Adjust height as needed */
     width: 1920px; /* Makes the section full width */
   }
+
+  .Comparison h1{
+    font-size: 64px; /* Adjusts header font size */
+    line-height: 1.2;  /* Adjusts line height for better alignment */
+    font-family: Norwester;
+    padding-bottom: 25px;
+  }
+
 
   .btn {
 
@@ -411,7 +414,7 @@ body {
   padding-left: 200px;
   padding-right: 200px;
   padding-bottom: 100px;
-  margin-top:  100px;
+  margin-top:  300px;
 }
 .form-row {
   display: flex;
@@ -504,6 +507,20 @@ textarea {
 
 fieldset {
   border: 0;
+}
+
+#content
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
 }
 
 .form-radio-group {
