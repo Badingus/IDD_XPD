@@ -51,6 +51,18 @@
     background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
     border-radius: 10px; /* Optional: rounded corners */
   }
+
+  .config-buttons.overlay {
+    position: absolute;
+    top: 10%;
+    display: grid;
+    z-index: 1; /* Place the overlay above the canvas */
+    color: white; /* Ensure the text is visible */
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background */
+    border-radius: 10px; /* Optional: rounded corners */
+  }
   
   .strap-colors {
     list-style: none;

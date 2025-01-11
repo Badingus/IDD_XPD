@@ -132,44 +132,55 @@
 
           <div class = "ModelCanvas">
             
-
-
              <!--Configurator Canvas -->
             <div class="canvas-container" id = "Configurator">
             <canvas id="web-canvas" class="gradient"></canvas>
       
             
               
-              <div class="button-group overlay ">
-                <h3>Sink</h3>
-
-                <button class="config carBody color1"></button>
-                <button class="config carBody color2"></button>
-                <button class="config carBody color3"></button>
-                <button class="config carBody color4"></button>
-                <button class="config carBody color5"></button>
-              </div>
-      
-              
-              <div class="button-group overlay hidden">
-                <h3>wheelAccent</h3>
-
-                <button class="config wheelAccent color1"></button>
-                <button class="config wheelAccent color2"></button>
-                <button class="config wheelAccent color3"></button>
-                <button class="config wheelAccent color4"></button>
-                <button class="config wheelAccent color5"></button>
-              </div>
-
-              <div class="button-group overlay hidden">
-              <h3>Drawer</h3>
-              
-                <button class="config wheel color1"></button>
-                <button class="config wheel color2"></button>
-                <button class="config wheel color3"></button>
-                <button class="config wheel color4"></button>
-                <button class="config wheel color5"></button>
-              </div>
+            <div class = "config-buttons overlay">
+              <form>
+                <div class="fields">
+                    <select class="type">
+                        <option value="carBody">Car Colour</option>
+                        <option value="carWheel">Wheel Colour</option>
+                        <option value="carCusion">Cushion Colour</option>
+                    </select>
+                  </form>
+                    <div class="button-group overlay carBody ">
+                 
+                      <button type = "button" class="config carBody color1"></button>
+                      <button type = "button" class="config carBody color2"></button>
+                      <button type = "button" class="config carBody color3"></button>
+                      <button type = "button" class="config carBody color4"></button>
+                      <button type = "button" class="config carBody color5"></button>
+                    </div>
+            
+                    
+                    <div class="button-group overlay carWheel">
+                     
+        
+                      <button type = "button" class="config wheelAccent color1"></button>
+                      <button type = "button" class="config wheelAccent color2"></button>
+                      <button type = "button" class="config wheelAccent color3"></button>
+                      <button type = "button" class="config wheelAccent color4"></button>
+                      <button type = "button" class="config wheelAccent color5"></button>
+                    </div>
+        
+                    <div class="button-group overlay carInternal">
+                    
+                    
+                      <button type = "button" class="config carCusion color1"></button>
+                      <button type = "button" class="config carCusion color2"></button>
+                      <button type = "button" class="config carCusion color3"></button>
+                      <button type = "button" class="config carCusion color4"></button>
+                      <button type = "button" class="config carCusion color5"></button>
+                    </div>
+                  
+                </div>
+                
+                </div>
+             
             </div>
           
 

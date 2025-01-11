@@ -221,8 +221,38 @@ function convertToHex(colorValue) {
 
 }
 
+const selectElement = document.querySelector('.type'); // Select the first element with the class "mySelect"
+
+const currentValue = selectElement.value;
+  
+// Get the current value
+document.querySelectorAll(`.fields div:not(.${currentValue})`).forEach(div => {
+  div.style.display = 'none';
+});
+//Function for changing out divs for selector on configurator
+document.querySelectorAll('.type').forEach(element => {
+  element.addEventListener('change', function () {
+      const x = this.value; // Get the value of the selected option
+      const siblings = Array.from(this.parentElement.children).filter(
+          child => child !== this && child.tagName === 'DIV'
+      );
+
+      // Hide all sibling divs that don't match the selected value
+      siblings.forEach(div => {
+          if (div.classList.contains(x)) {
+              div.style.display = ''; // Show the matching div
+          } else {
+              div.style.display = 'none'; // Hide non-matching divs
+          }
+      });
+  });
+});
+
+
 
 setupViewer();
+
+
 
 
 
