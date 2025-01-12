@@ -32,7 +32,7 @@ scene.background = null;
 
 // Models
 const dracoLoader = new DRACOLoader()
-dracoLoader.setDecoderPath('./node_modules/three/examples/jsm/libs/draco/')
+dracoLoader.setDecoderPath('/libs/draco/');
 
 const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(dracoLoader)
