@@ -94,8 +94,8 @@ async function setupViewer() {
 
 
   //Initialize colors
-  var brown = new Color(0x962c42);
-  var brownAccent = new Color(0x4f3328);
+  var red = new Color(0x962c42);
+  var redAccent = new Color(0x110b1a);
 
   var purple = new Color(0x3f216b); 
   var purpleAccent = new Color(0x110b1a);
@@ -119,7 +119,7 @@ async function setupViewer() {
   })
 
   document.querySelector('.config.carBody.color3')?.addEventListener('click', () => {
-    changeBodyColor(brown,brownAccent);
+    changeBodyColor(red,redAccent);
   })
 
   document.querySelector('.config.carBody.color4')?.addEventListener('click', () => {
@@ -218,7 +218,7 @@ async function setupViewer() {
 
       const storedWheelColor = JSON.parse(sessionStorage.getItem('storedWheelColor'));
       let wheelColorHex = convertToHex(storedWheelColor.colorToBeChanged) // Converts the color number into Hexdecimal format "#XXXXXX"
-      wheelAccent.color = new Color(wheelAccentColor);
+      wheelAccent.color = new Color(wheelColorHex);
     
     
 

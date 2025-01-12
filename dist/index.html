@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koenigsegg Gemera</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+    
+    
+
+     <!-- NavBar collapse script )-->
+     <!-- GSAP script )-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <script type="module" crossorigin src="./assets/main-095dde14.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/Navbar-2ed33ba2.js">
+  <link rel="modulepreload" crossorigin href="./assets/CarConfigurator-5285eb17.js">
+  <link rel="stylesheet" href="./assets/Navbar-9caae281.css">
+  <link rel="stylesheet" href="./assets/style_AG-0f6a05e6.css">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg custom-navbar px-4" id="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="./assets/img/Logo.png" alt="Logo" width="200" height="auto" class="d-inline-block align-text-top">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="index.html">Home</a>
+                  </li>
+             
+              <li class="nav-item me-5">
+                <a class="nav-link" href="preorder.html">Pre-Order</a>
+              </li>
+             
+              <li class="nav-item me-4">
+                <a class="nav-link" href="testdrive.html">Book A Test Drive</a>
+              </li>
+              
+              <li class="nav-item me-5">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+
+
+    <main>
+        <!-- Banner Header 1 (First Top)-->
+
+        <section class="banner-section"> 
+
+          <div class = "banner">
+              <video autoplay loop muted playsinline id="background-video">
+                <source src="./assets/videos/gemeraVid.mp4" type="video/mp4">
+              </video>
+          <div class = "faded-gradient"></div>
+        </div>
+              <div id="content">
+              <img class = "gemera-Logo" src="./assets/img/gemera_logo.png" id = "bannerContent">
+              <h1 id = "bannerContent">2 seater performance, 4 seater design.</h1>
+              </div>
+              <h1 id = "subtext"> Only 300 Gemeras worldwide</h1>
+
+          </div>
+
+        </section>
+        
+        <!-- Backstory -->
+
+        <section class="Backstory">
+          
+            <div class="backstory-text">
+              <h1>BACKSTORY</h1>
+              <p>
+                Christian von Koenigsegg founded Koenigsegg in Sweden in 1994 to create the ultimate sports car. Starting in a small studio, the company released its first prototype, the CC, in 1996. Known for hypercars like the Agera, Jesko, and Regera, Koenigsegg has set records in speed and efficiency. Despite its size, the brand excels through innovation, pioneering lightweight materials and hybrid technologies to lead the hypercar industry.
+              </p>
+            </div>
+            <div class = "faded-gradient"></div>
+
+          </section>
+
+        <!-- Slider Comparison -->
+
+        <section class="Comparison">
+          <script
+          defer
+          src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+        ></script>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+        />
+        
+        <div class = "slider-comparison">
+          <h1 class="center">THE SHIFT:THEN VS NOW</h1>
+          <div class = "slider-container">
+          <img-comparison-slider class = "comparison-slider">
+            <img slot="first" src="./assets/img/before.png" />
+            <img slot="second" src="./assets/img/after.png" />
+          </img-comparison-slider>  
+        </div>
+        </div>
+        </section>
+
+        <!-- Hotspot -->
+
+        <section class="Hotspot">
+
+        </section>
+
+        <!-- Engine Audio -->
+
+        <section class="Engine-Audio" id = "Engine-Audio">
+            <div class="engineAudioHitbox" id= "targetDiv">
+                <div class = "faded-gradient"></div>
+
+              <div class = "engineAudioHeader">
+                <h1>REV IT UP</h1>
+               
+                <div class = "Engine-Audio-Content">
+                
+                <h1 id="rpm">0</h1>
+                <p>Press and hold "E" to hear our V8 Engine</p>
+              </div>
+              </div>
+
+            </div>
+          </section>
+
+          
+          
+          
+
+          <div class = "ModelCanvas">
+            
+             <!--Configurator Canvas -->
+            <div class="canvas-container" id = "Configurator">
+            <canvas id="web-canvas" class="gradient"></canvas>
+            <div class = "canvas-swap">
+              <button class = "canvas-swap interactable">To Hotspot</button>
+              </div>
+      
+            
+              
+            <div class = "config-buttons overlay">
+              <form>
+                <div class="fields">
+                    <select class="type">
+                        <option id = "configOption" value="carBody">Car Colour</option>
+                        <option id = "configOption" value="carWheel">Wheel Colour</option>
+                        <option id = "configOption" value="carInt">Cushion Colour</option>
+                    </select>
+                  </form>
+                    <div class="button-group overlay carBody">
+                      <button type = "button" class="config carBody color1"></button>
+                      <button type = "button" class="config carBody color2"></button>
+                      <button type = "button" class="config carBody color3"></button>
+                      <button type = "button" class="config carBody color4"></button>
+                      <button type = "button" class="config carBody color5"></button>     
+                    </div>
+       
+                    <div class="button-group overlay carWheel">
+                      <button type = "button" class="config wheelAccent color1"></button>
+                      <button type = "button" class="config wheelAccent color2"></button>
+                      <button type = "button" class="config wheelAccent color3"></button>
+                      <button type = "button" class="config wheelAccent color4"></button>
+                      <button type = "button" class="config wheelAccent color5"></button>
+                    </div>
+        
+                    <div class="button-group overlay carInt">
+                      <button type = "button" class="config carInt color1"></button>
+                      <button type = "button" class="config carInt color2"></button>
+                      <button type = "button" class="config carInt color3"></button>
+                      <button type = "button" class="config carInt color4"></button>
+                      <button type = "button" class="config carInt color5"></button>
+                    </div>
+                  
+                </div>
+                
+                </div>
+             
+            </div>
+          
+
+          <!-- Hotspot Selection Canvas -->
+          <div class="canvas-container hotspot-selector" id = "HotspotSelector">
+            <div class = "canvas-swap">
+            <button class = "canvas-swap interactable">To Configurator</button>
+            </div>
+            
+            <span id="default" class="tooltiptext">Click on the hotspots to learn more about this generation of supercars</span>
+            <span id="storage" class="tooltiptext">  <b class = "tooltip-title">Travel Ready Design</b><br>
+            Featuring multiple storage compartments, including a front trunk (frunk) and rear storage areas, it accommodates 4 adults and their belongings comfortably. Practial design ensures luxurious look of hypercar and versatility for longer journies.
+            </span>
+            
+            <span id="door" class="tooltiptext"> <b class = "tooltip-title" >Interior Comfort Features</b><br>
+              Equipped with padded memory foam seats, eight cup holders - 4 heated and 4 chilled, there's entertainment screens Apple CarPlay for both front and rear passengers. USB connectivity, 2 induction charging ports and 11-speaker audio system are included. 
+              </span>
+            <span id="engine" class="tooltiptext"> <b class = "tooltip-title">Dark Matter</b><br>
+
+              Gemera features the revolutionary Koenigsegg Dark Matter e-motor - reducing weight and complexity while raising total power and providing instant torque from 0rpm.
+              
+              Hot V8
+              The gemera hot v8 - koenigsegg's new 'hot-vee' v8 engine sees the twin-turbochargers. The new hv8 engine and Dark Matter e-motor combine to provide 2300hp and 2750Nm - a new record for a fully homologated production vehicle. 
+              <button part="engine-2" class = "tooltip-next tooltip-info">Next</button>
+              </span>
+
+              <span id="engine-2" class="tooltiptext"> <b class = "tooltip-title">Light Speed Tourbillion Transmission</b><br>
+                
+              Developed specifically for Gemera, it results in a drivetrain weight reduction of 150kg. The development of the LSTT allowed the fitting of our 'hot-vee' v8 engine. 
+
+              The LSTT, Hv8 engine and Dark Matter e-motor combine to provide four-wheel drive and four-wheel torque vectoring - both firsts in a Koenigsegg vehicle. 
+              </span>
+
+
+            <div class="hotspot front" part="storage"></div>
+            <div class="hotspot side" part="door"></div>
+            <div class="hotspot back" part="engine"></div>
+
+            
+          <canvas class="webgl"></canvas>
+        
+          </div>
+          </div>
+        </div>
+
+        
+
+        <!-- Call-to-Action -->
+
+        <section class="Pre-Order">
+
+            <h1>Experience the pinnacle of luxury and performance.</h1>
+            <p> Secure your Koenigsegg Gemera today—pre-order now and redefine your journey.</p>
+            
+
+            <a href="preorder.html" class="btn btn-outline-light col-3 mx-auto">Pre-Order Now!</a>
+            
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+              <div class="col mb-3">
+                <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
+                    <img src="./assets/img/Koenigsegg_Logo_Black.png" alt="Logo" width="200" height="auto" class="d-inline-block align-text-top">
+                </a>
+                <p class="text-body-secondary">© 2024</p>
+              </div>
+          
+              <div class="col mb-3">
+          
+              </div>
+          
+             
+          
+              <div class="col ms-auto mb-3">
+                <h5>Navigation</h5>
+                <ul class="nav flex-column">
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
+                  <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
+                </ul>
+              </div>
+            </footer>
+          </div>
+    </footer>
+
+   
+</body>
+</html>
+
+
+

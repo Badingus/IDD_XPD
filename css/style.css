@@ -404,13 +404,13 @@
     background-size: cover;
     background-position: center;
 
-    height: 1080px; /* Adjust height as needed */
+    height: 980px; /* Adjust height as needed */
     width: 1920px; /* Makes the section full width */
     
 }
 
 .preorderconfigurator {
-  padding: 100px 0; 
+  padding: 80px 0; 
   font-family: "Questrial", serif;
   font-weight: 400;
   font-style: normal;
