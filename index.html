@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./css/style_AG.css">
 
     <script src="./scripts/Navbar.js" type="module"></script> <!-- NavBar callapse script )-->
+    <script src="./scripts/GSAP.js" type="module"></script> <!-- NavBar callapse script )-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </head>
@@ -33,10 +34,6 @@
                 <li class="nav-item me-5">
                     <a class="nav-link" href="index.html">Home</a>
                   </li>
-
-               <li class="nav-item me-5">
-                <a class="nav-link" href="#">Contact Us</a>
-              </li>
              
               <li class="nav-item me-5">
                 <a class="nav-link" href="preorder.html">Pre-Order</a>
@@ -45,7 +42,10 @@
               <li class="nav-item me-4">
                 <a class="nav-link" href="testdrive.html">Book A Test Drive</a>
               </li>
-             
+              
+              <li class="nav-item me-5">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
               
             </ul>
             
@@ -59,15 +59,18 @@
 
         <section class="banner-section"> 
 
-          <div class = "banner" id ="banner">
+          <div class = "banner">
               <video autoplay loop muted playsinline id="background-video">
                 <source src="./videos/gemeraVid.mp4" type="video/mp4">
               </video>
+          <div class = "faded-gradient"></div>
+        </div>
               <div id="content">
-              <img class = "gemera-Logo" src="./img/Logo.png">
-              <h1>2-seater performance, 4-seater design.</h1>
+              <img class = "gemera-Logo" src="./img/gemera_logo.png" id = "bannerContent">
+              <h1 id = "bannerContent">2 seater performance, 4 seater design.</h1>
               </div>
-            
+              <h1 id = "subtext"> Only 300 Gemeras worldwide</h1>
+
           </div>
 
         </section>
@@ -75,15 +78,15 @@
         <!-- Backstory -->
 
         <section class="Backstory">
-            <div class="d-flex align-items-center px-5">
-              <div class="flex-shrink-0">
-                <img class="backstory-image" src="./img/GemeraBackstory.jpg" alt="Backstory Image">
-              </div>
-              <div class="flex-grow-1 ms-4 px-5">
-                <h1 class="mb-3 ">Backstory</h1>
-                <p class="mb-0">The Koenigsegg Gemera is a limited production four-seat plug-in hybrid grand tourer (or 2-door sports saloon) to be manufactured by the Swedish automobile manufacturer Koenigsegg. It was unveiled on 3 March 2020 at an online broadcast by Koenigsegg at the cancelled Geneva Motor Show.</p>
-              </div>
+          
+            <div class="backstory-text">
+              <h1>BACKSTORY</h1>
+              <p>
+                Christian von Koenigsegg founded Koenigsegg in Sweden in 1994 to create the ultimate sports car. Starting in a small studio, the company released its first prototype, the CC, in 1996. Known for hypercars like the Agera, Jesko, and Regera, Koenigsegg has set records in speed and efficiency. Despite its size, the brand excels through innovation, pioneering lightweight materials and hybrid technologies to lead the hypercar industry.
+              </p>
             </div>
+            <div class = "faded-gradient"></div>
+
           </section>
 
         <!-- Slider Comparison -->
@@ -99,11 +102,13 @@
         />
         
         <div class = "slider-comparison">
-          <h1 class="center">The Shift:Then Vs Now</h1>
-          <img-comparison-slider class ="center">
+          <h1 class="center">THE SHIFT:THEN VS NOW</h1>
+          <div class = "slider-container">
+          <img-comparison-slider class = "comparison-slider">
             <img slot="first" src="img/before.png" />
             <img slot="second" src="img/after.png" />
           </img-comparison-slider>  
+        </div>
         </div>
         </section>
 
@@ -115,15 +120,20 @@
 
         <!-- Engine Audio -->
 
-        <section class="Engine-Audio">
-            <div class="d-flex flex-row-reverse align-items-center px-5">
-              <div class="flex-shrink-0 ms-4">
-                <img class="backstory-image" src="./img/GemeraBackstory.jpg" alt="Backstory Image">
+        <section class="Engine-Audio" id = "Engine-Audio">
+            <div class="engineAudioHitbox" id= "targetDiv">
+                <div class = "faded-gradient"></div>
+
+              <div class = "engineAudioHeader">
+                <h1>REV IT UP</h1>
+               
+                <div class = "Engine-Audio-Content">
+                <script src="./scripts/EngineRev.js" type="module"></script>
+                <h1 id="rpm">0</h1>
+                <p>Press and hold "E" to hear our V8 Engine</p>
               </div>
-              <div class="flex-grow-1 px-5 text-start">
-                <h1 class="mb-3">Rev Up The Engine</h1>
-                <p class="mb-0">The Koenigsegg Gemera is a limited production four-seat plug-in hybrid grand tourer (or 2-door sports saloon) to be manufactured by the Swedish automobile manufacturer Koenigsegg. It was unveiled on 3 March 2020 at an online broadcast by Koenigsegg at the cancelled Geneva Motor Show.</p>
               </div>
+
             </div>
           </section>
 
@@ -135,6 +145,7 @@
              <!--Configurator Canvas -->
             <div class="canvas-container" id = "Configurator">
             <canvas id="web-canvas" class="gradient"></canvas>
+            
       
             
               
@@ -142,9 +153,9 @@
               <form>
                 <div class="fields">
                     <select class="type">
-                        <option value="carBody">Car Colour</option>
-                        <option value="carWheel">Wheel Colour</option>
-                        <option value="carCusion">Cushion Colour</option>
+                        <option id = "configOption" value="carBody">Car Colour</option>
+                        <option id = "configOption" value="carWheel">Wheel Colour</option>
+                        <option id = "configOption" value="carInt">Cushion Colour</option>
                     </select>
                   </form>
                     <div class="button-group overlay carBody ">
@@ -154,7 +165,9 @@
                       <button type = "button" class="config carBody color3"></button>
                       <button type = "button" class="config carBody color4"></button>
                       <button type = "button" class="config carBody color5"></button>
+                      
                     </div>
+
             
                     
                     <div class="button-group overlay carWheel">
@@ -167,14 +180,12 @@
                       <button type = "button" class="config wheelAccent color5"></button>
                     </div>
         
-                    <div class="button-group overlay carInternal">
-                    
-                    
-                      <button type = "button" class="config carCusion color1"></button>
-                      <button type = "button" class="config carCusion color2"></button>
-                      <button type = "button" class="config carCusion color3"></button>
-                      <button type = "button" class="config carCusion color4"></button>
-                      <button type = "button" class="config carCusion color5"></button>
+                    <div class="button-group overlay carInt">
+                      <button type = "button" class="config carInt color1"></button>
+                      <button type = "button" class="config carInt color2"></button>
+                      <button type = "button" class="config carInt color3"></button>
+                      <button type = "button" class="config carInt color4"></button>
+                      <button type = "button" class="config carInt color5"></button>
                     </div>
                   
                 </div>
@@ -185,7 +196,7 @@
           
 
           <!-- Hotspot Selection Canvas -->
-          <div class="canvas-container hidden" id = "HotspotSelector">
+          <div class="canvas-container hidden " id = "HotspotSelector">
             <span class="tooltiptext">This is car door</span>
   
             <div class="hotspot top"></div>

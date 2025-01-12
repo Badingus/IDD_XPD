@@ -46,6 +46,50 @@ ScrollTrigger.create({
   }
 );
 
+//Banner content
+gsap.from(
+
+  "#bannerContent",
+  {
+   opacity: 0,
+   y: 100, 
+   duration: 1, 
+   stagger:1
+   
+});
+
+
+
+gsap.from(".Backstory", {
+  scrollTrigger: {
+    trigger: ".Backstory", // Start animation when this element enters the viewport
+    start: "top 80%", // Element starts animating when it's 80% visible
+    end: "top 20%",   // Optional: define an endpoint
+    ease: "power2.out",
+    toggleActions: "play none none reverse", // Animation lifecycle
+  },
+  backgroundSize:'150%',        // Starting opacity
+  duration: 0.5,       // Animation duration (1 second)
+  stagger: 0.3       // Delay between animations of multiple elements
+});
+
+
+
+gsap.from("#subtext", {
+  scrollTrigger: {
+    trigger: "#subtext", // Start animation when this element enters the viewport
+    start: "top 80%", // Element starts animating when it's 80% visible
+    end: "top 20%",   // Optional: define an endpoint
+    toggleActions: "play none none reverse", // Animation lifecycle
+  },
+  opacity: 0,        // Starting opacity
+  y: 50,             // Starting position (50px below)
+  duration: 1,       // Animation duration (1 second)
+  stagger: 0.3       // Delay between animations of multiple elements
+});
+
+
+
 //Scrolling for Navbar to close and open
 let lastScrollPosition = 0;
 const navbar = document.getElementById('navbar');

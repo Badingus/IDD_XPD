@@ -81,29 +81,33 @@ async function setupViewer() {
       sessionStorage.setItem('storedAccMat' , carAccent);
     }
   const wheelAccent = manager.materials.findMaterialsByName('Koenigsegg_Gemera_2021_Wheel1A_3D_3DWheel1C_Material')[0];
+  
 
   if(wheelAccent != null)
     {
       sessionStorage.setItem('storedWheelMat' , wheelAccent);
     }
 
+    const carInt = manager.materials.findMaterialsByName('Koenigsegg_Gemera_2021InteriorA_Material')[0];
+
+
 
 
   //Initialize colors
-  var brown = new Color(0x794029); //Burnished Russet
+  var brown = new Color(0x962c42);
   var brownAccent = new Color(0x4f3328);
 
-  var pink = new Color(0xDA1884); //Barbie Pink
-  var pinkAccent = new Color(0xff7ac4);
+  var purple = new Color(0x3f216b); 
+  var purpleAccent = new Color(0x110b1a);
 
-  var grey = new Color(0x8a9399); //Quicksilver
+  var grey = new Color(0x8a9399);
   var greyAccent = new Color(0x2c2f2e); 
 
-  var black = new Color(0x27221F); //Sumi Ink
-  var blackAccent = new Color(0x27251f); 
+  var black = new Color(0x383B39);
+  var blackAccent = new Color(0x1a1c1b); 
 
-  var green = new Color(0x5e6b44); //Bonza Green
-  var greenAccent = new Color(0x484d40); 
+  var green = new Color(0x136e62); 
+  var greenAccent = new Color(0x091a17); 
 
 
   document.querySelector('.config.carBody.color1')?.addEventListener('click', () => {
@@ -111,11 +115,11 @@ async function setupViewer() {
   })
 
   document.querySelector('.config.carBody.color2')?.addEventListener('click', () => {
-    changeBodyColor(brown,brownAccent);
+    changeBodyColor(black,blackAccent);
   })
 
   document.querySelector('.config.carBody.color3')?.addEventListener('click', () => {
-    changeBodyColor(black,blackAccent);
+    changeBodyColor(brown,brownAccent);
   })
 
   document.querySelector('.config.carBody.color4')?.addEventListener('click', () => {
@@ -123,7 +127,7 @@ async function setupViewer() {
   })
 
   document.querySelector('.config.carBody.color5')?.addEventListener('click', () => {
-    changeBodyColor(pink,pinkAccent);
+    changeBodyColor(purple,purpleAccent);
   })
 
   function changeBodyColor(colorToBeChanged,accentColor) {
@@ -138,17 +142,24 @@ async function setupViewer() {
     viewer.scene.setDirty();
   }
 
-  // Top
+  // Wheel Accent
   document.querySelector('.config.wheelAccent.color1')?.addEventListener('click', () => {
-    changeWheelColor(new Color(0x000000));
+    changeWheelColor(new Color(0x828282));
   })
-
   document.querySelector('.config.wheelAccent.color2')?.addEventListener('click', () => {
-    changeWheelColor(new Color(0xffffff));
+    changeWheelColor(new Color(0xff7c00));
   })
 
   document.querySelector('.config.wheelAccent.color3')?.addEventListener('click', () => {
-    changeWheelColor(new Color(0x616161));
+    changeWheelColor(new Color(0xac85ff));
+  })
+
+  document.querySelector('.config.wheelAccent.color4')?.addEventListener('click', () => {
+    changeWheelColor(new Color(0x5fcfff));
+  })
+
+  document.querySelector('.config.wheelAccent.color5')?.addEventListener('click', () => {
+    changeWheelColor(new Color(0xffffff));
   })
 
   function changeWheelColor(colorToBeChanged) {
@@ -159,16 +170,30 @@ async function setupViewer() {
     viewer.scene.setDirty();
   }
 
-  document.querySelector('.config.drawer-color1')?.addEventListener('click', () => {
+  document.querySelector('.config.carInt.color1')?.addEventListener('click', () => {
     changeDrawerColor(new Color(0x000000));
   })
 
-  document.querySelector('.config.drawer-color2')?.addEventListener('click', () => {
-    changeDrawerColor(new Color(0xffffff));
+  document.querySelector('.config.carInt.color2')?.addEventListener('click', () => {
+    changeDrawerColor(new Color(0xff0000));
+  })
+  document.querySelector('.config.carInt.color3')?.addEventListener('click', () => {
+    changeDrawerColor(new Color(0xffd800));
+  })
+  document.querySelector('.config.carInt.color4')?.addEventListener('click', () => {
+    changeDrawerColor(new Color(0x00ffba));
+  })
+  document.querySelector('.config.carInt.color5')?.addEventListener('click', () => {
+    changeDrawerColor(new Color(0x00b4ff));
+  })
+  document.querySelector('.config.carInt.color6')?.addEventListener('click', () => {
+    changeDrawerColor(new Color(0x9c00ff));
   })
 
+  
+
   function changeDrawerColor(colorToBeChanged) {
-    drawer.color = colorToBeChanged;
+    carInt.color = colorToBeChanged;
 
     //Save color settings
     sessionStorage.setItem('storedIntColor', JSON.stringify({ colorToBeChanged }));
@@ -241,6 +266,7 @@ document.querySelectorAll('.type').forEach(element => {
       siblings.forEach(div => {
           if (div.classList.contains(x)) {
               div.style.display = ''; // Show the matching div
+              buttonAnim();
           } else {
               div.style.display = 'none'; // Hide non-matching divs
           }
@@ -254,21 +280,29 @@ setupViewer();
 
 
 
-
-
 // Register the ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
+//button anim
+function buttonAnim()
+{
+  gsap.set(".config", { opacity: 0 });
+  gsap.from(
+    ".config",
+    {
+     opacity: 0,
+     y: 40, 
+     duration: 0.3,
+     ease: "power1.out",
+     onComplete: function () {
+      gsap.delayedCall(0.5, () => {
+        gsap.set(".config", { clearProps: "all" }); // Clears after a short delay
+      });
+     },
+    });
+  
+}
 
-// var audio = new Audio('audio/engine.mp3');
-// audio.addEventListener("canplaythrough", () => {
-//   console.log("Audio is ready to play");
-// });
 
-// function playSound() {
-//   console.log("Playing sound...");
-//   audio.currentTime = 0
-//   audio.play();
-// }
 
 

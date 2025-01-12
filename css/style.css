@@ -170,34 +170,31 @@
     background-size: cover;
     background-position: center;*/
 
-    height: 1080px; /* Adjust height as needed */
+    height: 1030px; /* Adjust height as needed */
     width: 1920px; /* Makes the section full width */
     
 }
 
+
+
 /* Backstory */
 
-/* .Backstory {
 
-    padding-top: 100px;
-
-    padding-left: 50px;
-    padding-right: 50px;
-
-    padding-bottom: 100px;
-}
-
-.backstory-image {
+  .Backstory {
     
-}
-
-*/
-
-.Backstory {
-    padding: 100px 0; /* Optional: Adds vertical spacing to the section */
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 400px 0; /* Optional: Adds vertical spacing to the section */
     font-family: "Questrial", serif;
     font-weight: 400;
     font-style: normal;
+    position: relative;
+    background-size: 100%;
+    width: 100%;
+    display: block;
+    background-image: url(../img/backstoryImg.jpg);
+    overflow: hidden;
+    
   }
   
   .backstory-image {
@@ -209,17 +206,21 @@
     font-size: 64px; /* Adjusts header font size */
     line-height: 1.2;  /* Adjusts line height for better alignment */
     font-family: Norwester;
+    color: white;
   }
   
   .Backstory p {
     font-size: 24px;   /* Adjusts paragraph font size */
     line-height: 1.5;  /* Adjusts paragraph line height */
+    color: white;
   }
 
   .backstory-text {
-
-    padding-left: 100px;
-    padding-right: 100px;
+    flex-grow: 1;
+    padding-left: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
   }
 
 
@@ -238,25 +239,58 @@
 } */
 
   /* Engine-Audio */
-
   .Engine-Audio {
-    padding: 100px 0; /* Optional: Adds vertical spacing to the section */
     font-family: "Questrial", serif;
     font-weight: 400;
     font-style: normal;
+    background-image: url(../img/engineback.jpg);
+    background-size: 100%;
+    height: 1080px;
+    position: relative;
+    color: white;
+    display: flex;
+    transition: 2s ease-in;
+  }
+
+  .Engine-Audio.lit{
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url(../img/engineback_lit.jpg);
+    background-size: 100%;
+    height: 1080px;
+    position: relative;
+    color: white;
+    display: flex;
+    transition: 2s ease-out;
   }
 
   .Engine-Audio h1 {
     font-size: 64px; /* Adjusts header font size */
     line-height: 1.2;  /* Adjusts line height for better alignment */
     font-family: Norwester;
-    text-align: right;
   }
 
   .Engine-Audio p {
     font-size: 24px;   /* Adjusts paragraph font size */
     line-height: 1.5;  /* Adjusts paragraph line height */
-    text-align: right;
+  }
+
+  .engineAudioHeader
+  {
+    text-align: center;
+    position:relative;
+    z-index: 3;
+  }
+
+  .engineAudioHitbox
+  {
+    width:100%;
+  }
+
+  .Engine-Audio-Content
+  {
+    padding-top: 200px ;
   }
 
   /* Pre-Order */
@@ -293,8 +327,9 @@
   /*Slider Comparison Spot*/
 
   .Comparison {
-    height: 820px; /* Adjust height as needed */
-    width: 1920px; /* Makes the section full width */
+    background-color: black;
+    height: 1080px;
+ /* Makes the section full width */
   }
 
   .Comparison h1{
@@ -306,7 +341,6 @@
 
 
   .btn {
-
     font-size: 42px;
     font-family: Norwester;
   }
@@ -319,7 +353,7 @@
     background-size: cover;
     background-position: center;
 
-    height: 720px; /* Adjust height as needed */
+    height: 1080px; /* Adjust height as needed */
     width: 1920px; /* Makes the section full width */
     
 }
@@ -342,6 +376,42 @@
   font-size: 24px;   
   line-height: 1.5;  
   text-align: center;
+}
+
+
+.preorder-button {
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.preorder-button button {
+  width: 40%;
+  padding: 10px;
+  
+  margin-bottom: 10px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent;
+
+  font-family: Norwester;
+  font-size: 41px;
+  color: black;
+  text-align: center;
+ 
+  cursor: pointer;
+}
+
+
+.preorder-button button:hover {
+  background-color: black;
+  color: white;
+  transition: all .4s ease;
+
 }
 
 /* 
@@ -406,6 +476,8 @@ body {
   font-family: "Questrial", serif;
   font-weight: 400;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   
 }
 .preorderform {
@@ -414,7 +486,6 @@ body {
   padding-left: 200px;
   padding-right: 200px;
   padding-bottom: 100px;
-  margin-top:  300px;
 }
 .form-row {
   display: flex;
@@ -509,27 +580,15 @@ fieldset {
   border: 0;
 }
 
-#content
-{
-  position: absolute;
-  top: 0;
-  left: 0;
-
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
+.form-group legend {
+  font-weight: bold;
 }
 
 .form-radio-group {
-  display: flex; /* Align items horizontally */
-  gap: 5px; /* Add spacing between radio buttons */
+  gap: 20px; /* Add spacing between radio buttons */
   justify-content: space-between; 
-  margin-right: 800px;
+  margin-right: 100px;
   text-align: left;
-
 }
 
 .form-radio-group label {
@@ -561,6 +620,188 @@ fieldset {
 .text-center button {
   font-size: 36px;
   font-family: Norwester;
+}
+textarea {
+
+  font-family: Questrial;
+  font-weight: 400;
+}
+
+.form-group option, select, #inputDate, ::placeholder {
+
+  font-family: Questrial;
+  font-weight: 400;
+}
+
+.preorder-button {
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.preorder-button button {
+
+  
+  width: 40%;
+  padding: 10px;
+  
+  margin-bottom: 10px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent;
+
+  font-family: Norwester;
+  font-size: 41px;
+  color: black;
+  text-align: center;
+ 
+  cursor: pointer;
+}
+
+
+.preorder-button button:hover {
+  background-color: black;
+  color: white;
+  transition: all .4s ease;
+
+}
+
+/*Test Drive Form*/
+
+.testdrive-map {
+  background-image: url(../img/Koenigsegg_DealerMap.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 720px; /* Adjust height as needed */
+    width: auto; /* Makes the section full width */
+
+    
+}
+
+.testdriveform {
+  max-width: 1920px;
+ 
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.testdriveform legend {
+
+  padding-top: 25px;
+}
+
+.Terms-Conditions {
+  font-family: Questrial;
+  
+  text-align: left;
+  padding-top: 25pX;
+}
+
+.Terms-Conditions-Header h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Terms-Conditions p {
+  font-size: 18px;
+}
+
+.Term-Checkbox {
+  padding-top: 25px;
+}
+
+.Term-Conditions-Checkbox {
+  display: flex;
+  padding-top: 25px;
+}
+
+.Term-Conditions-Checkbox label {
+  
+  
+  margin-bottom: 12px;
+}
+
+.Term-Conditions-Checkbox input[type="checkbox"] {
+  
+  align-items: center;
+  
+  width: 5%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  vertical-align: middle; 
+  margin-right: 10px; 
+
+}
+
+.Terms-Checkbox {
+  
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+
+
+
+/* File Button CSS */
+
+.file-label {
+  font-family: Questrial; /* Change to desired font */
+  font-size: 16px;
+  color: #333; /* Change color if needed */
+}
+
+.file-input::file-selector-button {
+  font-family: Questrial; /* Change to desired font */
+  font-size: 14px;
+  color: black; /* Change placeholder text color */
+  background: #f9f9f9; /* Change background color */
+  border: 1px solid #0f0f0f;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-input input[type="file" i] {
+  font-family: Questrial;
+}
+
+.Terms-button button {
+
+  
+  width: 40%;
+  padding: 10px;
+  
+  margin-bottom: 10px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent;
+
+  font-family: Norwester;
+  font-size: 41px;
+  color: black;
+  text-align: center;
+ 
+  cursor: pointer;
+}
+
+
+.Terms-button button:hover {
+  background-color: black;
+  color: white;
+  transition: all .4s ease;
+
 }
 
 

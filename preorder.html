@@ -18,7 +18,7 @@
 
 
     <script>
-      window.addEventListener('load', myFunction); //Page listener for the page being loaded
+
     </script>
 </head>
 
@@ -35,9 +35,9 @@
       <div class="navbar-menu" id="navbarMenu">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
           <li class="nav-item"><a class="nav-link" href="preorder.html">Pre-Order</a></li>
           <li class="nav-item"><a class="nav-link" href="testdrive.html">Book A Test Drive</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
         </ul>
       </div>
     </div>
@@ -48,53 +48,62 @@
 
         <section class="configurator">
 
-        <div id="web-canvas-container">
-          <div class="customizer-container offset">
-          <canvas id="web-canvas" class="gradient"></canvas>
-    
-          
+          <div class="canvas-container" id = "Configurator">
+            <canvas id="web-canvas" class="gradient"></canvas>
+      
             
-            <div class="button-group overlay carBody ">
-              <h3>Sink</h3>
-
-              <button class="config carBody color1"></button>
-              <button class="config carBody color2"></button>
-              <button class="config carBody color3"></button>
-              <button class="config carBody color4"></button>
-              <button class="config carBody color5"></button>
-            </div>
-    
+              
+            <div class = "config-buttons overlay">
+              <form>
+                <div class="fields">
+                    <select class="type">
+                        <option value="carBody">Car Colour</option>
+                        <option value="carWheel">Wheel Colour</option>
+                        <option value="carCusion">Cushion Colour</option>
+                    </select>
+                  </form>
+                    <div class="button-group overlay carBody ">
+                 
+                      <button type = "button" class="config carBody color1"></button>
+                      <button type = "button" class="config carBody color2"></button>
+                      <button type = "button" class="config carBody color3"></button>
+                      <button type = "button" class="config carBody color4"></button>
+                      <button type = "button" class="config carBody color5"></button>
+                    </div>
             
-            <div class="button-group overlay hidden carWheel">
-              <h3>wheelAccent</h3>
-
-              <button class="config wheelAccent color1"></button>
-              <button class="config wheelAccent color2"></button>
-              <button class="config wheelAccent color3"></button>
-              <button class="config wheelAccent color4"></button>
-              <button class="config wheelAccent color5"></button>
+                    
+                    <div class="button-group overlay carWheel">
+                     
+        
+                      <button type = "button" class="config wheelAccent color1"></button>
+                      <button type = "button" class="config wheelAccent color2"></button>
+                      <button type = "button" class="config wheelAccent color3"></button>
+                      <button type = "button" class="config wheelAccent color4"></button>
+                      <button type = "button" class="config wheelAccent color5"></button>
+                    </div>
+        
+                    <div class="button-group overlay carInternal">
+                    
+                    
+                      <button type = "button" class="config carCusion color1"></button>
+                      <button type = "button" class="config carCusion color2"></button>
+                      <button type = "button" class="config carCusion color3"></button>
+                      <button type = "button" class="config carCusion color4"></button>
+                      <button type = "button" class="config carCusion color5"></button>
+                    </div>
+                  
+                </div>
+                
+                </div>
+             
             </div>
-
-            <div class="button-group overlay hidden carInternal">
-            <h3>Drawer</h3>
-            
-              <button class="config wheel color1"></button>
-              <button class="config wheel color2"></button>
-              <button class="config wheel color3"></button>
-              <button class="config wheel color4"></button>
-              <button class="config wheel color5"></button>
-            </div>
-          </div>
-        </div>
-
       </section>
-        <!-- <section class="preorderconfigurator">
+        <section class="preorderconfigurator">
               <div class="flex-grow-1 ms-4 px-5">
-                <h1 class="mb-3 ">Preorder</h1>
-                <p class="mb-0">The Koenigsegg Gemera is a limited production four-seat plug-in hybrid grand tourer (or 2-door sports saloon) to be manufactured by the Swedish automobile manufacturer Koenigsegg. It was unveiled on 3 March 2020 at an online broadcast by Koenigsegg at the cancelled Geneva Motor Show.</p>
+                <h1 class="mb-3 ">preorder</h1>
               </div>
             </div>
-          </section> -->
+          </section>
 
         <!-- Form - Pre-Order -->
         
@@ -169,7 +178,7 @@
               </div>
               
               
-
+              
               <fieldset class="form-group">
                 <legend>How did you know about us?</legend>
                 <div class="form-radio-group">
@@ -185,6 +194,8 @@
                 <input type="checkbox" id="gridCheck">
                 <label for="gridCheck">
                   By submitting this form, you agree to the following:
+                  <br>
+                  <br>
               </div>
             </div>
             
@@ -200,8 +211,8 @@
                 </label>
             </div>
 
-            <div class="text-center">
-              <button class="form-button" type="submit">Submit the Pre-order</button>
+            <div class="preorder-button">
+              <button type="submit">Submit the Pre-order</button>
             </div>
           </form>
         </section>
