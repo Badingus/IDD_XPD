@@ -1,0 +1,884 @@
+* {
+  margin: 0;
+  padding: 0;
+  }
+
+/* Font Part */
+
+.questrial-regular {
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.nav-link {
+    font-family: 'Questrial', sans-serif; /* Different font for links */
+    font-size: 24px;
+    color: whitesmoke;
+  }
+
+
+  @font-face {
+    font-family: Norwester;
+    src: url(../font-face/norwester.otf);
+}
+
+/* Navigation Bar */
+
+/* .menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+} */
+
+/* General Navbar Styles */
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(103,123,122,1);
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  z-index: 11;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  max-width: 1780px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navbar-brand .logo {
+  width: 200px;
+  height: auto;
+}
+
+.navbar-toggler {
+  display: none; /* Hidden on larger screens */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-toggler-icon {
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background-color: #fff;
+}
+
+.navbar-toggler-icon::before {
+  top: -6px;
+}
+
+.navbar-toggler-icon::after {
+  top: 6px;
+}
+
+/* Navbar Menu */
+
+.navbar-menu {
+  display: flex; /* Make the navbar items display horizontally */
+  justify-content: flex-end;
+  width: 90%;
+}
+
+/* .navbar-menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar-menu li {
+  float: left;
+}
+
+.navbar-menu li a {
+
+  display: block; 
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  width: 100%;
+
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+}
+
+*/
+
+.navbar-nav {
+  display: flex; /* Make the list items display in a row */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 30px; /* Space between links */
+}
+
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding-left: 25px;
+}
+
+.nav-link:hover {
+  color: #f39c12; /* Hover color */
+}
+
+
+
+/* Banner Background */
+
+.banner-section {
+
+    /*background-image: url(../img/Gemera.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;*/
+
+    height: 1030px; /* Adjust height as needed */
+    width: 1920px; /* Makes the section full width */
+    
+}
+
+
+
+/* Backstory */
+
+
+  .Backstory {
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 400px 0; /* Optional: Adds vertical spacing to the section */
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    background-size: 100%;
+    width: 100%;
+    display: block;
+    background-image: url(../img/backstoryImg.jpg);
+    overflow: hidden;
+    
+  }
+  
+  .backstory-image {
+    width: 420px;
+    height: 420px;
+  }
+  
+  .Backstory h1 {
+    font-size: 64px; /* Adjusts header font size */
+    line-height: 1.2;  /* Adjusts line height for better alignment */
+    font-family: Norwester;
+    color: white;
+  }
+  
+  .Backstory p {
+    font-size: 24px;   /* Adjusts paragraph font size */
+    line-height: 1.5;  /* Adjusts paragraph line height */
+    color: white;
+  }
+
+  .backstory-text {
+    flex-grow: 1;
+    padding-left: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+  }
+
+
+  /* Hotspot */
+
+  /* .Hotspot{
+
+    background-image: url(../img/PlaceholderHotspot.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 720px; 
+    width: 1920px; 
+    
+} */
+
+  /* Engine-Audio */
+  .Engine-Audio {
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url(../img/engineback.jpg);
+    background-size: 100%;
+    height: 1080px;
+    position: relative;
+    color: white;
+    display: flex;
+    transition: 2s ease-in;
+  }
+
+  .Engine-Audio.lit{
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url(../img/engineback_lit.jpg);
+    background-size: 100%;
+    height: 1080px;
+    position: relative;
+    color: white;
+    display: flex;
+    transition: 2s ease-out;
+  }
+
+  .Engine-Audio h1 {
+    font-size: 64px; /* Adjusts header font size */
+    line-height: 1.2;  /* Adjusts line height for better alignment */
+    font-family: Norwester;
+  }
+
+  .Engine-Audio p {
+    font-size: 24px;   /* Adjusts paragraph font size */
+    line-height: 1.5;  /* Adjusts paragraph line height */
+  }
+
+  .engineAudioHeader
+  {
+    text-align: center;
+    position:relative;
+    z-index: 3;
+  }
+
+  .engineAudioHitbox
+  {
+    width:100%;
+  }
+
+  .Engine-Audio-Content
+  {
+    padding-top: 200px ;
+  }
+
+  /* Pre-Order */
+
+  .Pre-Order {
+
+    padding: 200px 0;
+    text-align: center;
+
+    font-family: "Questrial", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+
+    background-color: black;
+    
+  }
+
+  .Pre-Order h1 {
+    font-size: 64px; /* Adjusts header font size */
+    line-height: 1.2;  /* Adjusts line height for better alignment */
+    font-family: Norwester;
+    padding-bottom: 25px;
+
+  }
+
+  .Pre-Order p {
+    font-size: 24px;   /* Adjusts paragraph font size */
+    line-height: 1.5;  /* Adjusts paragraph line height */
+    padding-bottom: 100px;
+
+  }
+
+  /*Slider Comparison Spot*/
+
+  .Comparison {
+    background-color: black;
+    height: 1080px;
+ /* Makes the section full width */
+  }
+
+  .Comparison h1{
+    font-size: 64px; /* Adjusts header font size */
+    line-height: 1.2;  /* Adjusts line height for better alignment */
+    font-family: Norwester;
+    padding-bottom: 25px;
+  }
+
+
+  .btn {
+    font-size: 42px;
+    font-family: Norwester;
+  }
+
+  /* Pre-Order Page */
+
+.configurator {
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 1080px; /* Adjust height as needed */
+    width: 1920px; /* Makes the section full width */
+    
+}
+
+.preorderconfigurator {
+  padding: 100px 0; 
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.preorderconfigurator h1 {
+  font-size: 64px; 
+  line-height: 1.2;  
+  font-family: Norwester;
+  text-align: center;
+}
+
+.preorderconfigurator p {
+  font-size: 24px;   
+  line-height: 1.5;  
+  text-align: center;
+}
+
+
+.preorder-button {
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.preorder-button button {
+  width: 40%;
+  padding: 10px;
+  
+  margin-bottom: 10px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent;
+
+  font-family: Norwester;
+  font-size: 41px;
+  color: black;
+  text-align: center;
+ 
+  cursor: pointer;
+}
+
+
+.preorder-button button:hover {
+  background-color: black;
+  color: white;
+  transition: all .4s ease;
+
+}
+
+/* 
+.preorderform {
+
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  font-style: normal;
+  
+}
+
+.preorderform .form-control {
+  height: 50px; 
+  font-size: 16px; 
+  padding: 10px; 
+}
+
+.preorderform select.form-select {
+  height: 50px; 
+  font-size: 16px; 
+}
+
+.preorderform .btn-primary {
+  margin-top: 50px; 
+}
+
+.preorderform fieldset {
+
+  margin-top: 40px;
+
+}
+
+textarea {
+  resize: none; 
+  width: 100%; 
+  height: 150px; 
+  overflow: auto; 
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  font-style: normal;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+}
+
+#commentBox {
+  width: 100%; 
+  height: 150px; 
+  resize: none; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  font-size: 16px; 
+  font-family: Arial, sans-serif; 
+}
+
+*/
+
+body {
+  font-family: "Questrial", serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+.preorderform {
+  max-width: 1920px;
+ 
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+}
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
+}
+.form-group {
+  padding: 10px;
+  width: 100%;
+}
+.form-group-half {
+  width: 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input, select, textarea{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+/*Pre-Order form button*/
+.form-button
+{ 
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+
+.form-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* Form Checkbox & Radios */
+
+.form-checkbox {
+  display: flex;
+  align-items: normal;
+  margin-left: 10px;
+  margin-top: 25px;
+}
+.form-checkbox label {
+  display: inline-block;
+  margin-left: 10px; /* Optional spacing between checkbox and label */
+  line-height: 1.8; /* Adjust line spacing for better readability */
+  padding: 10px; /* Optional padding for internal spacing */
+  white-space: nowrap;
+  width: calc(100% - 20px);
+  text-overflow: ellipsis;
+}
+
+.form-checkbox-info {
+
+  margin-left: 50px;
+  margin-top: px;
+}
+
+.form-checkbox input[type="checkbox"] {
+  
+  align-items: center;
+
+}
+
+/* Radio - Pre-Order */
+
+fieldset {
+  border: 0;
+}
+
+.form-group legend {
+  font-weight: bold;
+}
+
+.form-radio-group {
+  gap: 20px; /* Add spacing between radio buttons */
+  justify-content: space-between; 
+  margin-right: 100px;
+  text-align: left;
+}
+
+.form-radio-group label {
+  display: inline-block;
+  padding-top: 25px;
+  white-space: nowrap;
+  width: auto;
+  
+}
+
+.form-radio-group input {
+  margin-right: 10px;
+  width: auto;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.text-center {
+
+  text-align: center;
+  padding-top: 50px;
+  
+}
+
+.text-center button {
+  font-size: 36px;
+  font-family: Norwester;
+}
+textarea {
+
+  font-family: Questrial;
+  font-weight: 400;
+}
+
+.form-group option, select, #inputDate, ::placeholder {
+
+  font-family: Questrial;
+  font-weight: 400;
+}
+
+.preorder-button {
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.preorder-button button {
+
+  
+  width: 40%;
+  padding: 10px;
+  
+  margin-bottom: 10px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent;
+
+  font-family: Norwester;
+  font-size: 41px;
+  color: black;
+  text-align: center;
+ 
+  cursor: pointer;
+}
+
+
+.preorder-button button:hover {
+  background-color: black;
+  color: white;
+  transition: all .4s ease;
+
+}
+
+/*Test Drive Form*/
+
+.testdrive-map {
+  background-image: url(../img/Koenigsegg_DealerMap.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    height: 720px; /* Adjust height as needed */
+    width: auto; /* Makes the section full width */
+
+    
+}
+
+.testdriveform {
+  max-width: 1920px;
+ 
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+
+.testdriveform legend {
+
+  padding-top: 25px;
+}
+
+.Terms-Conditions {
+  font-family: Questrial;
+  
+  text-align: left;
+  padding-top: 25pX;
+}
+
+.Terms-Conditions-Header h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.Terms-Conditions p {
+  font-size: 18px;
+}
+
+.Term-Checkbox {
+  padding-top: 25px;
+}
+
+.Term-Conditions-Checkbox {
+  display: flex;
+  padding-top: 25px;
+}
+
+.Term-Conditions-Checkbox label {
+  
+  
+  margin-bottom: 12px;
+}
+
+.Term-Conditions-Checkbox input[type="checkbox"] {
+  
+  align-items: center;
+  
+  width: 5%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  vertical-align: middle; 
+  margin-right: 10px; 
+
+}
+
+.Terms-Checkbox {
+  
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+
+
+
+/* File Button CSS */
+
+.file-label {
+  font-family: Questrial; /* Change to desired font */
+  font-size: 16px;
+  color: #333; /* Change color if needed */
+}
+
+.file-input::file-selector-button {
+  font-family: Questrial; /* Change to desired font */
+  font-size: 14px;
+  color: black; /* Change placeholder text color */
+  background: #f9f9f9; /* Change background color */
+  border: 1px solid #0f0f0f;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.file-input input[type="file" i] {
+  font-family: Questrial;
+}
+
+.Terms-button button {
+
+  
+  width: 40%;
+  padding: 10px;
+  
+  margin-bottom: 10px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: transparent;
+
+  font-family: Norwester;
+  font-size: 41px;
+  color: black;
+  text-align: center;
+ 
+  cursor: pointer;
+}
+
+
+.Terms-button button:hover {
+  background-color: black;
+  color: white;
+  transition: all .4s ease;
+
+}
+
+
+/* Footer */
+
+/* Footer Styles */
+.custom-footer {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 50px 20px;
+  border-top: 1px solid #ddd; /* Top border */
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensure responsiveness */
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo Section */
+
+.footer-logo-section {
+  flex: 1; /* Take up equal space */
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.footer-logo-link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer-logo {
+  width: 200px;
+  height: auto;
+}
+
+.footer-copyright {
+  color: #6c757d; /* Muted text color */
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Navigation Section */
+
+.footer-navigation {
+  flex: 1; /* Take up equal space */
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.footer-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.footer-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-item {
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: #6c757d; /* Muted text color */
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #007bff; /* Blue color on hover */
+}

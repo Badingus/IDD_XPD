@@ -18,11 +18,20 @@
   }
 
 
-  @font-face {
+@font-face {
     font-family: Norwester;
     src: url(../font-face/norwester.otf);
 }
 
+@font-face {
+  font-family: ChronicleDisplayBold;
+  src: url(../font-face/Chronicle\ Display\Black.otf)
+}
+
+@font-face {
+  font-family: ChronicleDisplaySemi;
+  src: url(../font-face/Chronicle\ Display\Semibold.otf)
+}
 /* Navigation Bar */
 
 /* .menu {
@@ -59,6 +68,7 @@
   max-width: 1780px;
   margin: 0 auto;
   width: 100%;
+  height: 56px;
 }
 
 .navbar-brand .logo {
@@ -147,16 +157,34 @@
 }
 
 .nav-link {
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
   transition: color 0.3s ease;
-  padding-left: 25px;
+  margin-left: 25px;
+ /* padding-left: 25px; */
+
+  display: inline-block;
+  position: relative;
 }
 
-.nav-link:hover {
-  color: #f39c12; /* Hover color */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 
@@ -192,7 +220,7 @@
     background-size: 100%;
     width: 100%;
     display: block;
-    background-image: url(../img/backstoryImg.jpg);
+    background-image: url(../assets/img/backstoryImg.jpg);
     overflow: hidden;
     
   }
@@ -205,7 +233,7 @@
   .Backstory h1 {
     font-size: 64px; /* Adjusts header font size */
     line-height: 1.2;  /* Adjusts line height for better alignment */
-    font-family: Norwester;
+    font-family: ChronicleDisplaySemi;
     color: white;
   }
   
@@ -243,7 +271,7 @@
     font-family: "Questrial", serif;
     font-weight: 400;
     font-style: normal;
-    background-image: url(../img/engineback.jpg);
+    background-image: url(../assets/img/engineback.jpg);
     background-size: 100%;
     height: 1080px;
     position: relative;
@@ -256,7 +284,7 @@
     font-family: "Questrial", serif;
     font-weight: 400;
     font-style: normal;
-    background-image: url(../img/engineback_lit.jpg);
+    background-image: url(../assets/img/engineback_lit.jpg);
     background-size: 100%;
     height: 1080px;
     position: relative;
@@ -268,7 +296,7 @@
   .Engine-Audio h1 {
     font-size: 64px; /* Adjusts header font size */
     line-height: 1.2;  /* Adjusts line height for better alignment */
-    font-family: Norwester;
+    font-family: ChronicleDisplaySemi;
   }
 
   .Engine-Audio p {
@@ -312,7 +340,7 @@
   .Pre-Order h1 {
     font-size: 64px; /* Adjusts header font size */
     line-height: 1.2;  /* Adjusts line height for better alignment */
-    font-family: Norwester;
+    font-family: ChronicleDisplaySemi;
     padding-bottom: 25px;
 
   }
@@ -324,7 +352,30 @@
 
   }
 
-  /*Slider Comparison Spot*/
+  .Pre-Order .custom-button {
+    display: block;
+    width: 25%;
+    margin: 0 auto; 
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    font-size: 31px;
+    font-family: Norwester;
+
+  }
+  
+  .custom-button:hover {
+    background-color: #fff;
+    color: #000;
+  }  /*Slider Comparison Spot*/
 
   .Comparison {
     background-color: black;
@@ -335,7 +386,7 @@
   .Comparison h1{
     font-size: 64px; /* Adjusts header font size */
     line-height: 1.2;  /* Adjusts line height for better alignment */
-    font-family: Norwester;
+    font-family: ChronicleDisplaySemi;
     padding-bottom: 25px;
   }
 
@@ -368,7 +419,7 @@
 .preorderconfigurator h1 {
   font-size: 64px; 
   line-height: 1.2;  
-  font-family: Norwester;
+  font-family: ChronicleDisplaySemi;
   text-align: center;
 }
 
@@ -492,6 +543,7 @@ body {
   flex-wrap: wrap;
   margin: -10px;
 }
+/* Defining Form Input Holder Size */
 .form-group {
   padding: 10px;
   width: 100%;
@@ -507,7 +559,7 @@ label {
   font-weight: bold;
 }
 
-input, select, textarea{
+input, select, textarea, button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
@@ -546,17 +598,20 @@ textarea {
 
 /* Form Checkbox & Radios */
 
-.form-checkbox {
+.form-checkbox  {
   display: flex;
   align-items: normal;
   margin-left: 10px;
-  margin-top: 25px;
+  margin-top: 10px;
 }
 .form-checkbox label {
   display: inline-block;
-  margin-left: 10px; /* Optional spacing between checkbox and label */
+  margin-left: 10px;
+  margin-top: 13px; /* Optional spacing between checkbox and label */
   line-height: 1.8; /* Adjust line spacing for better readability */
-  padding: 10px; /* Optional padding for internal spacing */
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px; /* Optional padding for internal spacing */
   white-space: nowrap;
   width: calc(100% - 20px);
   text-overflow: ellipsis;
@@ -596,6 +651,8 @@ fieldset {
   padding-top: 25px;
   white-space: nowrap;
   width: auto;
+  margin-right: 50px;
+  font-weight: normal;
   
 }
 
@@ -654,7 +711,7 @@ textarea {
   box-sizing: border-box;
   background-color: transparent;
 
-  font-family: Norwester;
+  font-family: Questrial;
   font-size: 41px;
   color: black;
   text-align: center;
@@ -673,11 +730,11 @@ textarea {
 /*Test Drive Form*/
 
 .testdrive-map {
-  background-image: url(../img/Koenigsegg_DealerMap.PNG);
+  background-image: url(../assets/img/Koenigsegg_DealerMap.PNG);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
+    position: relative;
     height: 720px; /* Adjust height as needed */
     width: auto; /* Makes the section full width */
 
@@ -804,6 +861,42 @@ textarea {
 
 }
 
+/* Contact Us */
+
+.contactinfo {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center; 
+    margin: 0 auto;
+    height: 100px; 
+    padding-top: 250px;
+    padding-bottom: 150px; 
+
+    
+}
+
+.contactinfo h2 {
+  
+  margin: auto 0;
+  width: 50%; 
+  text-align: center; 
+  border-bottom: 1px solid #000; 
+  line-height: 0.1em;
+  margin: 10px 0 20px; 
+
+  font-family: ChronicleDisplaySemi;
+  font-size: 24px;
+}
+
+.contactinfo span {
+  background:#fff; 
+  padding:0 10px;
+
+  font-size: 30px;
+  color:#333;
+}
 
 /* Footer */
 
@@ -811,7 +904,7 @@ textarea {
 .custom-footer {
   background-color: #f8f9fa; /* Light gray background */
   padding: 50px 20px;
-  border-top: 1px solid #ddd; /* Top border */
+  border-top: 1px solid rgba(103,123,122);; /* Top border */
   font-family: Arial, sans-serif;
 }
 
@@ -848,7 +941,7 @@ textarea {
   font-size: 14px;
 }
 
-/* Navigation Section */
+/* Footer Section */
 
 .footer-navigation {
   flex: 1; /* Take up equal space */

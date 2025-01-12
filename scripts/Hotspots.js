@@ -1,10 +1,27 @@
-
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+import { gsap } from "gsap";
 
 console.clear( );
+
+
+
+// HDR Loader
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
+
+// Load HDR environment map
+const hdrLoader = new RGBELoader();
+hdrLoader.load('./assets/autumn forest.hdr', (texture) => {
+  texture.mapping = THREE.EquirectangularReflectionMapping; // Use correct mapping for HDR
+  
+  // Set HDR as the scene's environment and background
+ // Add HDR as background
+  scene.environment = texture; // Use HDR for lighting reflections
+}, undefined, (error) => {
+  console.error('Error loading HDR file:', error);
+});
 
 // Canvas
 const canvas = document.querySelector('.webgl');
@@ -100,12 +117,9 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 
 var pos = [
-	new THREE.Vector3(0, 1.75, 0), // Top hotspot position
-	new THREE.Vector3(0, -1.75, 0), // Bottom hotspot position
-	new THREE.Vector3(-1.75, 0.5, 0), // Left hotspot position
-	new THREE.Vector3(1.75, 0.5, 0), // Right hotspot position
-	new THREE.Vector3(0, 0.5, 1.75), // Front hotspot position
-	new THREE.Vector3(0, 0.5, -1.75), // Back hotspot position
+	new THREE.Vector3(0.13, 0.7, 1.3), // Front hotspot position
+	new THREE.Vector3(0.9, 0.7, 0), // Side hotspot position
+	new THREE.Vector3(0.13, 0.7, -2), // Back hotspot position
 ]
 
 var hotspots = document.querySelectorAll('.hotspot');
@@ -133,7 +147,7 @@ const tick = () => {
   window.requestAnimationFrame(tick);
 
   if(model) {
-    for(var i = 0; i < 6; i++) {
+    for(var i = 0; i < pos.length; i++) {
       v.copy(pos[i]);
       model.localToWorld(v);
       v.project(camera);
@@ -153,13 +167,113 @@ const tick = () => {
 }
 
 tick();
-document.querySelector('.hotspot.top')?.addEventListener('click', () => {
-	promptTrigger("Top")
+
+hotspots.forEach(hotspot => {
+  hotspot.addEventListener('click', () => {
+    // Get the target tooltip ID from the 'part' attribute
+    const targetId = hotspot.getAttribute('part');
+    
+    // Get all tooltips
+    const tooltips = document.querySelectorAll('.tooltiptext');
+    
+    // Hide all tooltips
+    tooltips.forEach(tooltip => {
+      tooltip.style.visibility = 'hidden';
+      tooltip.style.opacity = '0';
+    });
+    
+    if (targetId) {
+      // Show the tooltip of the clicked hotspot
+      const targetDiv = document.getElementById(targetId);
+      targetDiv.style.visibility = 'visible';
+      targetDiv.style.opacity = '1';
+    }
+  });
+});
+
+var nextBtn = document.querySelector('.tooltip-next');
+
+nextBtn.addEventListener('click', () => {
+  // Get the target tooltip ID from the 'part' attribute
+  const targetId = nextBtn.getAttribute('part');
+  
+  // Get all tooltips
+  const tooltips = document.querySelectorAll('.tooltiptext');
+  
+  // Hide all tooltips
+  tooltips.forEach(tooltip => {
+    tooltip.style.visibility = 'hidden';
+    tooltip.style.opacity = '0';
+  });
+  
+  if (targetId) {
+    // Show the tooltip of the clicked hotspot
+    const targetDiv = document.getElementById(targetId);
+    targetDiv.style.visibility = 'visible';
+    targetDiv.style.opacity = '1';
+  }
+});
+
+showDefaultTooltip("default");
+function showDefaultTooltip(id)
+{
+  // Get the target tooltip ID from the 'part' attribute
+  
+  const targetId = id
+  
+  // Get all tooltips
+  const tooltips = document.querySelectorAll('.tooltiptext');
+  
+  // Hide all tooltips
+  tooltips.forEach(tooltip => {
+    tooltip.style.visibility = 'hidden';
+    tooltip.style.opacity = '0';
+  });
+  
+  if (targetId) {
+    // Show the tooltip of the clicked hotspot
+    const targetDiv = document.getElementById(targetId);
+    targetDiv.style.visibility = 'visible';
+    targetDiv.style.opacity = '1';
+    animateTooltip()
+  }
+};
+
+document.querySelector('.hotspot.front')?.addEventListener('click', () => {
+	moveCameraTo(1.1242022321, 0.689133683, 3.9201674433)
 })
-document.querySelector('.hotspot.bot')?.addEventListener('click', () => {
-	promptTrigger("bot")
+document.querySelector('.hotspot.side')?.addEventListener('click', () => {
+	moveCameraTo(4.2430221896, 0.748366131, 1.1255538582)
+})
+document.querySelector('.hotspot.back')?.addEventListener('click', () => {
+	moveCameraTo(0.5518365352, 1.8399872218, -4.1517667866)
 })
 
-function promptTrigger(value) {
-	alert(value + " button clicked");
+function moveCameraTo(x, y, z, duration = 3) {
+  gsap.to(camera.position, {
+      duration: duration,  // Animation duration
+      x: x,   // Target X coordinate
+      y: y,   // Target Y coordinate
+      z: z,   // Target Z coordinate
+      ease: "power2.out",  // Easing function for smooth transition
+      onUpdate: function() {
+        renderer.render(scene, camera); // Re-render scene on update
+      },
+  });
 }
+
+function animateTooltip()
+{
+  gsap.from(
+    ".tooltiptext",
+    {
+     opacity: 0,
+     y: 40, 
+     duration: 1,
+     ease: "power1.out",
+     
+    });
+}
+
+
+

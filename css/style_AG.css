@@ -70,6 +70,12 @@
   }
 
   
+  .faded-gradient.hidden
+  {
+    display: none;
+  }
+
+  
   .button-group.overlay.hidden
   {
     display: none;
@@ -137,21 +143,58 @@
     opacity: 1;
   }
 
-  .color1 {
+  .carBody.color1 {
     background: linear-gradient(135deg, rgba(150,150,150,1) 0%, rgba(255,255,255,1) 50%, rgba(150,150,150,1) 100%);
   }
-  .color2 {
+  .carBody.color2 {
     background: linear-gradient(137deg, rgba(0,0,0,1) 0%, rgba(124,124,124,1) 50%, rgba(56,59,57,1) 100%);
   }
     
-  .color3 {
+  .carBody.color3 {
     background: linear-gradient(137deg, rgb(179, 21, 55) 0%, rgb(220, 71, 71) 50%, rgb(179, 21, 55) 100%);
   }
-  .color4 {
+  .carBody.color4 {
     background: linear-gradient(137deg, rgba(42,144,116,1) 0%, rgba(81,204,194,1) 50%, rgba(42,144,116,1) 100%);
 
   }
-  .color5 {
+  .carBody.color5 {
+    background: linear-gradient(137deg, rgba(99,51,184,1) 0%, rgba(122,127,255,1) 50%, rgba(99,51,184,1) 100%);
+  }
+
+
+  /*Wheel button colours*/
+  .wheelAccent.color1 {
+    background: linear-gradient(135deg, rgba(150,150,150,1) 0%, rgba(255,255,255,1) 50%, rgba(150,150,150,1) 100%);
+  }
+  .wheelAccent.color2 {
+    background: linear-gradient(137deg, rgb(255, 115, 0) 0%, rgb(255, 190, 160) 50%, rgba(255, 115, 0) 100%);
+  }
+  .wheelAccent.color3 {
+    background: linear-gradient(137deg, rgba(99,51,184,1) 0%, rgba(122,127,255,1) 50%, rgba(99,51,184,1) 100%);
+  }
+  
+  .wheelAccent.color4 {
+    background: linear-gradient(137deg, rgb(157, 203, 255) 0%, rgba(81,204,194,1) 50%, rgb(157, 203, 255) 100%);
+
+  }
+  .wheelAccent.color5 {
+    background: linear-gradient(137deg, rgb(179, 21, 55) 0%, rgb(220, 71, 71) 50%, rgb(179, 21, 55) 100%)
+  }
+
+  Car Interior colors
+  .carInt.color1 {
+    background: linear-gradient(135deg, rgba(150,150,150,1) 0%, rgba(255,255,255,1) 50%, rgba(150,150,150,1) 100%);
+  }
+  .carInt.color2 {
+    background: linear-gradient(137deg, rgba(0,0,0,1) 0%, rgba(124,124,124,1) 50%, rgba(56,59,57,1) 100%);
+  }
+ .carInt.color3 {
+    background: linear-gradient(137deg, rgb(179, 21, 55) 0%, rgb(220, 71, 71) 50%, rgb(179, 21, 55) 100%);
+  }
+ .carInt.color4 {
+    background: linear-gradient(137deg, rgba(42,144,116,1) 0%, rgba(81,204,194,1) 50%, rgba(42,144,116,1) 100%);
+  }
+ .carInt.color5 {
     background: linear-gradient(137deg, rgba(99,51,184,1) 0%, rgba(122,127,255,1) 50%, rgba(99,51,184,1) 100%);
   }
 
@@ -211,25 +254,13 @@
 .canvas-container {
   top: 0%;
   position:relative;
-  background-color: rgb(255, 72, 0); 
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(180,180,180,1) 49%, rgba(0,0,0,1) 100%);
   z-index: 10;
-  width: 100%;
-  height: 100%; /* Full viewport height */
-  overflow: hidden;
-  grid-area: inner-div;
-}
-.canvas-container {
-  background-color: rgba(255, 88, 88, 1);
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   width: 100vw;
   height: 100vh;
-}
-
-.canvas-container.hidden
-{
-  display: none;
+  overflow: hidden;
+  grid-area: inner-div;
+  display: block;
 }
 
 .type
@@ -286,18 +317,20 @@
 
 .tooltiptext {
  visibility: visible;
-  width: 200px;
-  background-color: black;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.274);
   color: #fff;
   text-align: center;
   justify-content: center;
   align-items: center;
   border-radius: 6px;
+  padding: 30px 30px 30px 30px;
 
   position: absolute;
   z-index: 1;
   top: 20px;
   left: 20px;
+  margin-left: 30px;
   
   /* Takes 1 second to go from 0% to 100% opacity */
   opacity: 0;
@@ -308,6 +341,12 @@
   opacity: 1;
 }
 
+.tooltip-info
+{
+  color: white;
+  padding-top: 10px;
+  background-color: #2c2c2c8a;
+}
 
 #targetDiv {
   border: 2px solid #000;
@@ -316,13 +355,50 @@
   cursor: pointer;
 }
 
+.canvas-swap
+{
+  position: absolute;
+  bottom: 20px;  /* Adjust the distance from the bottom */
+  color: white;
+  padding: 10px 20px;
+  padding-left: 30px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  z-index: 10; /* Ensures the button is above other elements */
+}
+
+
+.canvas-swap button
+{
+  width:300px;
+  height:80px;
+  bottom: 20px;  /* Adjust the distance from the bottom */
+  background-color: rgba(0, 0, 0, 0.7); /* Optional styling for the button */
+  color: white;
+  padding: 10px 20px;
+  
+  font-size: 16px;
+  border-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10; /* Ensures the button is above other elements */
+  transition: 0.5s ease-in;
+}
+
+.canvas-swap button:hover
+{
+  transform: scale(1.1);
+  transition: 0.5s ease-in;
+}
 /*TEST DRIVE PAGE*/
 .marker
 {
   width: 100px;
   margin: auto;
-  padding-top: 350px;
+  padding-bottom: 50px;
   animation: pulse 3s infinite;
+  cursor: pointer;
 }
 
 
@@ -333,7 +409,8 @@
   height: 100%;
   align-items: center;
   display: flex;
-  padding-left: 50%;
+
+
 }
 .mapImg
 {
@@ -343,6 +420,44 @@
   border-width: 3px;
 }
 
+.map-info
+{
+  margin-top: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+  transition: 1s ease-in;
+  
+}
+
+.map-info.hidden
+{
+  display: none;
+}
+
+.map-info img
+{
+  border-radius: 100px;
+}
+.map-info h1
+{
+   color:white;
+}
+.map-info button{
+  color: rgb(255, 255, 255);
+  background-color: #5e5e5e5d;
+  font-family: "Questrial", serif;
+  transition: 0.5s ease-in;
+}
+
+.map-info button:hover
+{
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+  font-family: "Questrial", serif;
+}
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -356,6 +471,23 @@
     transform: scale(1);
 
   }
+}
+
+@keyframes underline {
+  0% {
+    text-decoration: none;
+
+  }
+  100% {
+    text-decoration: underline;
+
+  }
+}
+
+.tooltip-title
+{
+  animation: pulse 1.5s none;
+  font-size: medium;
 }
 
   

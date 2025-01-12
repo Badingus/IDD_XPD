@@ -12,14 +12,17 @@
 
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/style_AG.css">
+
+    <script src="./scripts/Navbar.js" type="module"></script>
+    <script src="./scripts/testdrivemap.js" type="module"></script>
 </head>
 
 <body>
     
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="navbar-container">
       <a href="#" class="navbar-brand">
-        <img src="./img/Logo.png" alt="Logo" class="logo">
+        <img src="./assets/img/Logo.png" alt="Logo" class="logo">
       </a>
       
       <div class="navbar-menu" id="navbarMenu">
@@ -27,7 +30,7 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="preorder.html">Pre-Order</a></li>
           <li class="nav-item"><a class="nav-link" href="testdrive.html">Book A Test Drive</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactus.html">Contact Us</a></li>
         </ul>
       </div>
     </div>
@@ -37,12 +40,27 @@
 
       <!-- Test Drive Map - Google API probably -->
       <section class="testdrive-map">  <!-- This is just placeholder --> 
-      <div class = "marker-container" ><img src="./img/map-marker.png" alt="" class="marker">
-      <img src="./img/googlemap.jpg" alt="" class="mapImg"></div>
+      <div class = "marker-container" >
+        <img src="./assets/img/map-marker.png" alt="" class="marker">
+      </div>
+
+      <div class = "faded-gradient hidden">
+        <div class ="map-info">
+          <img src="./assets/img/googlemap.jpg"></img>
+          <h1>1094 Lower Delta Rd, Motorway Building, Singapore 169205</h1>
+          <button class = "mapClose">Close</button>
+        </div>
+      </div>
       </section>
 
+      <section class="preorderconfigurator">
+        <div class="flex-grow-1 ms-4 px-5">
+          <h1>Test Drive Form</h1>
+        </div>
+      </div>
+    </section>
       <!-- Test Drive Form -->
-
+      
       <section class="testdriveform">
         <form>
           <div class="form-row">
@@ -146,7 +164,7 @@
       <div class="footer-container">
           <div class="footer-logo-section">
               <a href="#" class="footer-logo-link">
-                  <img src="./img/Koenigsegg_Logo_Black.png" alt="Logo" class="footer-logo">
+                  <img src="./assets/img/Koenigsegg_Logo_Black.png" alt="Logo" class="footer-logo">
               </a>
               <p class="footer-copyright">© 2024</p>
           </div>

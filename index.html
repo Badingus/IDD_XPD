@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/style_AG.css">
 
-    <script src="./scripts/Navbar.js" type="module"></script> <!-- NavBar callapse script )-->
-    <script src="./scripts/GSAP.js" type="module"></script> <!-- NavBar callapse script )-->
+    <script src="./scripts/Navbar.js" type="module"></script> <!-- NavBar collapse script )-->
+    <script src="./scripts/GSAP.js" type="module"></script> <!-- GSAP script )-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </head>
@@ -23,7 +23,7 @@
     
     <nav class="navbar navbar-expand-lg custom-navbar px-4" id="navbar">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"><img src="./img/Logo.png" alt="Logo" width="200" height="auto" class="d-inline-block align-text-top">
+          <a class="navbar-brand" href="#"><img src="./assets/img/Logo.png" alt="Logo" width="200" height="auto" class="d-inline-block align-text-top">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -61,12 +61,12 @@
 
           <div class = "banner">
               <video autoplay loop muted playsinline id="background-video">
-                <source src="./videos/gemeraVid.mp4" type="video/mp4">
+                <source src="./assets/videos/gemeraVid.mp4" type="video/mp4">
               </video>
           <div class = "faded-gradient"></div>
         </div>
               <div id="content">
-              <img class = "gemera-Logo" src="./img/gemera_logo.png" id = "bannerContent">
+              <img class = "gemera-Logo" src="./assets/img/gemera_logo.png" id = "bannerContent">
               <h1 id = "bannerContent">2 seater performance, 4 seater design.</h1>
               </div>
               <h1 id = "subtext"> Only 300 Gemeras worldwide</h1>
@@ -105,8 +105,8 @@
           <h1 class="center">THE SHIFT:THEN VS NOW</h1>
           <div class = "slider-container">
           <img-comparison-slider class = "comparison-slider">
-            <img slot="first" src="img/before.png" />
-            <img slot="second" src="img/after.png" />
+            <img slot="first" src="./assets/img/before.png" />
+            <img slot="second" src="./assets/img/after.png" />
           </img-comparison-slider>  
         </div>
         </div>
@@ -139,13 +139,16 @@
 
           <script src="./scripts/Hotspots.js" type="module"></script>
           <script src="./scripts/CarConfigurator.js" type="module"></script>
+          <script src="./scripts/CanvasSwap.js" type="module"></script>
 
           <div class = "ModelCanvas">
             
              <!--Configurator Canvas -->
             <div class="canvas-container" id = "Configurator">
             <canvas id="web-canvas" class="gradient"></canvas>
-            
+            <div class = "canvas-swap">
+              <button class = "canvas-swap interactable">To Hotspot</button>
+              </div>
       
             
               
@@ -158,21 +161,15 @@
                         <option id = "configOption" value="carInt">Cushion Colour</option>
                     </select>
                   </form>
-                    <div class="button-group overlay carBody ">
-                 
+                    <div class="button-group overlay carBody">
                       <button type = "button" class="config carBody color1"></button>
                       <button type = "button" class="config carBody color2"></button>
                       <button type = "button" class="config carBody color3"></button>
                       <button type = "button" class="config carBody color4"></button>
-                      <button type = "button" class="config carBody color5"></button>
-                      
+                      <button type = "button" class="config carBody color5"></button>     
                     </div>
-
-            
-                    
+       
                     <div class="button-group overlay carWheel">
-                     
-        
                       <button type = "button" class="config wheelAccent color1"></button>
                       <button type = "button" class="config wheelAccent color2"></button>
                       <button type = "button" class="config wheelAccent color3"></button>
@@ -196,15 +193,41 @@
           
 
           <!-- Hotspot Selection Canvas -->
-          <div class="canvas-container hidden " id = "HotspotSelector">
-            <span class="tooltiptext">This is car door</span>
-  
-            <div class="hotspot top"></div>
-            <div class="hotspot bot"></div>
-            <div class="hotspot"></div>
-            <div class="hotspot"></div>
-            <div class="hotspot"></div>
-            <div class="hotspot"></div>
+          <div class="canvas-container hotspot-selector" id = "HotspotSelector">
+            <div class = "canvas-swap">
+            <button class = "canvas-swap interactable">To Configurator</button>
+            </div>
+            
+            <span id="default" class="tooltiptext">Click on the hotspots to learn more about this generation of supercars</span>
+            <span id="storage" class="tooltiptext">  <b class = "tooltip-title">Travel Ready Design</b><br>
+            Featuring multiple storage compartments, including a front trunk (frunk) and rear storage areas, it accommodates 4 adults and their belongings comfortably. Practial design ensures luxurious look of hypercar and versatility for longer journies.
+            </span>
+            
+            <span id="door" class="tooltiptext"> <b class = "tooltip-title" >Interior Comfort Features</b><br>
+              Equipped with padded memory foam seats, eight cup holders - 4 heated and 4 chilled, there's entertainment screens Apple CarPlay for both front and rear passengers. USB connectivity, 2 induction charging ports and 11-speaker audio system are included. 
+              </span>
+            <span id="engine" class="tooltiptext"> <b class = "tooltip-title">Dark Matter</b><br>
+
+              Gemera features the revolutionary Koenigsegg Dark Matter e-motor - reducing weight and complexity while raising total power and providing instant torque from 0rpm.
+              
+              Hot V8
+              The gemera hot v8 - koenigsegg's new 'hot-vee' v8 engine sees the twin-turbochargers. The new hv8 engine and Dark Matter e-motor combine to provide 2300hp and 2750Nm - a new record for a fully homologated production vehicle. 
+              <button part="engine-2" class = "tooltip-next tooltip-info">Next</button>
+              </span>
+
+              <span id="engine-2" class="tooltiptext"> <b class = "tooltip-title">Light Speed Tourbillion Transmission</b><br>
+                
+              Developed specifically for Gemera, it results in a drivetrain weight reduction of 150kg. The development of the LSTT allowed the fitting of our 'hot-vee' v8 engine. 
+
+              The LSTT, Hv8 engine and Dark Matter e-motor combine to provide four-wheel drive and four-wheel torque vectoring - both firsts in a Koenigsegg vehicle. 
+              </span>
+
+
+            <div class="hotspot front" part="storage"></div>
+            <div class="hotspot side" part="door"></div>
+            <div class="hotspot back" part="engine"></div>
+
+            
           <canvas class="webgl"></canvas>
         
           </div>
@@ -220,7 +243,9 @@
             <h1>Experience the pinnacle of luxury and performance.</h1>
             <p> Secure your Koenigsegg Gemera today—pre-order now and redefine your journey.</p>
             
-            <button type="button" class="btn btn-outline-light col-3 mx-auto"> Pre-Order Now! </button>
+
+            <a href="preorder.html" class="btn btn-outline-light col-3 mx-auto">Pre-Order Now!</a>
+            
 
         </section>
 
@@ -231,7 +256,7 @@
             <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
               <div class="col mb-3">
                 <a href="#" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
-                    <img src="./img/Koenigsegg_Logo_Black.png" alt="Logo" width="200" height="auto" class="d-inline-block align-text-top">
+                    <img src="./assets/img/Koenigsegg_Logo_Black.png" alt="Logo" width="200" height="auto" class="d-inline-block align-text-top">
                 </a>
                 <p class="text-body-secondary">© 2024</p>
               </div>

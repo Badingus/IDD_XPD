@@ -17,7 +17,7 @@ let rpm = 0; // Current RPM
     // Load the custom engine sound effect
     function loadEngineSound() {
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      fetch("./audio/engine-sound.mp3") // Replace with the path to your sound file
+      fetch("./assets/audio/engine-sound.mp3") // Replace with the path to your sound file
         .then(response => response.arrayBuffer())
         .then(data => audioContext.decodeAudioData(data))
         .then(buffer => {

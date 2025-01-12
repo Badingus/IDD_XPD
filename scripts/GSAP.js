@@ -88,6 +88,17 @@ gsap.from("#subtext", {
   stagger: 0.3       // Delay between animations of multiple elements
 });
 
+gsap.from(".canvas-swap", {
+  scrollTrigger: {
+    trigger: ".canvas-swap", // Start animation when this element enters the viewport
+    start: "top 100%",
+    toggleActions: "play none none reverse", // Animation lifecycle
+  },
+  opacity: 0,        // Starting opacity
+  y: 50,             // Starting position (50px below)
+  duration: 0.3,       // Animation duration (1 second)
+});
+
 
 
 //Scrolling for Navbar to close and open

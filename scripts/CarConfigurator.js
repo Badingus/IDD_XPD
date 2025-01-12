@@ -159,7 +159,7 @@ async function setupViewer() {
   })
 
   document.querySelector('.config.wheelAccent.color5')?.addEventListener('click', () => {
-    changeWheelColor(new Color(0xffffff));
+    changeWheelColor(new Color(0x992a22));
   })
 
   function changeWheelColor(colorToBeChanged) {
@@ -170,29 +170,26 @@ async function setupViewer() {
     viewer.scene.setDirty();
   }
 
-  document.querySelector('.config.carInt.color1')?.addEventListener('click', () => {
-    changeDrawerColor(new Color(0x000000));
-  })
 
+  document.querySelector('.config.carInt.color1')?.addEventListener('click', () => {
+    changeInteriorColor(new Color(0xff0000));
+  })
   document.querySelector('.config.carInt.color2')?.addEventListener('click', () => {
-    changeDrawerColor(new Color(0xff0000));
+    changeInteriorColor(new Color(0xffd800));
   })
   document.querySelector('.config.carInt.color3')?.addEventListener('click', () => {
-    changeDrawerColor(new Color(0xffd800));
+    changeInteriorColor(new Color(0x00ffba));
   })
   document.querySelector('.config.carInt.color4')?.addEventListener('click', () => {
-    changeDrawerColor(new Color(0x00ffba));
+    changeInteriorColor(new Color(0x00b4ff));
   })
   document.querySelector('.config.carInt.color5')?.addEventListener('click', () => {
-    changeDrawerColor(new Color(0x00b4ff));
-  })
-  document.querySelector('.config.carInt.color6')?.addEventListener('click', () => {
-    changeDrawerColor(new Color(0x9c00ff));
+    changeInteriorColor(new Color(0x9c00ff));
   })
 
   
 
-  function changeDrawerColor(colorToBeChanged) {
+  function changeInteriorColor(colorToBeChanged) {
     carInt.color = colorToBeChanged;
 
     //Save color settings
@@ -206,30 +203,42 @@ async function setupViewer() {
   {
     console.log("Reloading...")
     //Getting colors
-    const storedbodColor = JSON.parse(sessionStorage.getItem('storedBodyColor'));
-    let bodColorHex = convertToHex(storedbodColor.colorToBeChanged) // Converts the color number into Hexdecimal format "#XXXXXX"
 
-
-    const storedAccColor = JSON.parse(sessionStorage.getItem('storedAccentColor'));
-    console.log(storedAccColor);
-    let accColorHex = convertToHex(storedAccColor.accentColor) // Converts the color number into Hexdecimal format "#XXXXXX"
+      const storedbodColor = JSON.parse(sessionStorage.getItem('storedBodyColor'));
+      let bodColorHex = convertToHex(storedbodColor.colorToBeChanged) // Converts the color number into Hexdecimal format "#XXXXXX"
+      carBody.color = new Color(bodColorHex); // Initialises new color on model
     
-    if(sessionStorage.getItem('storedWheelColor') != null)
-    {
+
+
+      const storedAccColor = JSON.parse(sessionStorage.getItem('storedAccentColor'));
+      let accColorHex = convertToHex(storedAccColor.accentColor) // Converts the color number into Hexdecimal format "#XXXXXX"
+      carAccent.color = new Color(accColorHex);
+    
+    
+
       const storedWheelColor = JSON.parse(sessionStorage.getItem('storedWheelColor'));
       let wheelColorHex = convertToHex(storedWheelColor.colorToBeChanged) // Converts the color number into Hexdecimal format "#XXXXXX"
-    }
-    
-
-    // const storedIntColor = JSON.parse(sessionStorage.getItem('storedIntColor'));
-    // let intColorHex = convertToHex(storedIntColor.colorToBeChanged) // Converts the color number into Hexdecimal format "#XXXXXX"
-
+      wheelAccent.color = new Color(wheelAccentColor);
     
     
 
-    //Setting Colors
-    carBody.color = new Color(bodColorHex); // Initialises new color on model
-    carAccent.color = new Color(accColorHex);
+      const storedIntColor = JSON.parse(sessionStorage.getItem('storedIntColor'));
+      let intColorHex = convertToHex(storedIntColor.colorToBeChanged) // Converts the color number into Hexdecimal format "#XXXXXX"
+      carInt.color = new Color(intColorHex);
+      
+
+    
+    
+
+
+      
+      
+  
+      
+  
+      
+    
+
   }
 
 reloadColors();
